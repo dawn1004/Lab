@@ -1,17 +1,30 @@
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('path');
 const mongoose = require('mongoose')
+const axios = require('axios');
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) { // eslint-disable-line global-require
   app.quit();
 }
 
+let mainWindow
+let authWindow
 const createWindow = () => {
   // Create the browser window.
-  const mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
+  mainWindow = new BrowserWindow({
+    width: 1300,
+    height: 720,
+    show: false,
+    webPreferences:{
+      devTools: true,
+      nodeIntegration: true,
+    }
+  });
+  authWindow = new BrowserWindow({
+    width: 700,
+    height: 520,
+    parent: mainWindow,
     webPreferences:{
       devTools: true,
       nodeIntegration: true,
@@ -19,10 +32,12 @@ const createWindow = () => {
   });
 
   // and load the index.html of the app.
-  mainWindow.loadFile(path.join(__dirname, 'index.html'));
+  mainWindow.loadFile(path.join(__dirname, './Views/index.html'));
+  authWindow.loadFile(path.join(__dirname, './Views/login.html'));
 
   // Open the DevTools.
   mainWindow.webContents.openDevTools();
+  authWindow.webContents.openDevTools();
 };
 
 // This method will be called when Electron has finished
@@ -50,6 +65,35 @@ app.on('activate', () => {
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and import them here.
 
+// hot reloader
+try {
+  require('electron-reloader')(module)
+} catch (_) {}
+
+//IPC EVENTS
+
+
+ipcMain.on('auth:login', (event, data) => {
+
+  axios.get('http://localhost:3000/Users')
+  .then(function (response) {
+    const user = response.data[0]
+
+    if(data.username == user.username && data.password == user.password){
+      mainWindow.show()
+      authWindow.hide()
+     }
+
+  })
+  .catch(function (error) {
+    console.log(error);
+  })
+
+
+})
+
+
+
 
 //connect DB
 
@@ -61,9 +105,13 @@ const middlewares = jsonServer.defaults()
 server.use(middlewares)
 server.use(router)
 
-
-server.listen(3000, () => {
-  console.log('JSON Server is running')
-})
+try {
+  server.listen(3000, () => {
+    console.log('JSON Server is running')
+  })
+  
+} catch (error) {
+  console.log({error: error})
+}
 
 

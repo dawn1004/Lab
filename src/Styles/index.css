@@ -1,0 +1,39 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  display: flex;
+}
+*{
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+.drawer-nav{
+  height: 100vh;
+  width: 340px;
+}
+.drawer-nav ul{
+  padding: 0px;
+}
+.drawer-nav ul li{
+  padding: 20px 0px;
+  padding-left: 40px;
+  list-style: none;
+  margin: 0;
+  font-size: 1.3rem;
+  color: white;
+  cursor: pointer;
+}
+.drawer-nav ul li:hover{
+background: rgba(0, 0, 0, 0.034);
+}
+#transaction, #apparatus , #chemical, #report{
+  display: none;
+}
+#home, #transaction, #apparatus , #chemical, #report{ 
+  width: 945px;
+}
+
+.chemical-table-container{
+  width: 900px;
+  margin: 10px 20px;
+}

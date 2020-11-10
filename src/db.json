@@ -1,35 +1,6 @@
 {
-  "students": [
-    {
-      "id": 1,
-      "name": "DAwn",
-      "section": "3c"
-    },
-    {
-      "id": 2,
-      "name": "lemuel",
-      "section": "4c"
-    },
-    {
-      "id": 4,
-      "name": "tvxq"
-    },
-    {
-      "id": 5,
-      "name": "svenssss",
-      "section": "dotes"
-    },
-    {
-      "id": 6
-    },
-    {
-      "id": 7
-    },
-    {
-      "id": 8
-    },
-    {
-      "id": 9
-    }
-  ]
+  "Users":[{
+    "username": "admin123",
+    "password": "admin123"
+  }]
 }

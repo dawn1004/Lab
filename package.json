@@ -48,6 +48,7 @@
   "dependencies": {
     "axios": "^0.21.0",
     "electron-packager": "^15.1.0",
+    "electron-reloader": "^1.0.1",
     "electron-squirrel-startup": "^1.0.0",
     "json-server": "^0.16.2",
     "mongoose": "^5.10.11",
