@@ -1,0 +1,29 @@
+.modal-add-chemical-bg{
+    background: rgba(0, 0, 0, 0.281);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+}
+.modal-edit-chemicals-bg{
+    background: rgba(0, 0, 0, 0.281);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+}
+
+.delete-chemical-confirmation{
+    background: rgb(255, 255, 255);
+    width: 300px;
+    padding: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}

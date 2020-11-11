@@ -11,5 +11,6 @@ loginBtn.addEventListener('click', (e)=>{
     const password = document.querySelector('.password').value
 
     ipcRenderer.send("auth:login", {username: username, password: password});
+    // ipcRenderer.send("popup:alert", {message: message});
 })
 

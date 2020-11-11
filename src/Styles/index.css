@@ -26,14 +26,12 @@ body {
 .drawer-nav ul li:hover{
 background: rgba(0, 0, 0, 0.034);
 }
-#transaction, #apparatus , #chemical, #report{
+#home, #transaction, #apparatus , #chemical, #report{
   display: none;
 }
 #home, #transaction, #apparatus , #chemical, #report{ 
   width: 945px;
+  height: 100vh;
+  overflow-y: scroll;
 }
 
-.chemical-table-container{
-  width: 900px;
-  margin: 10px 20px;
-}

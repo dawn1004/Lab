@@ -1,0 +1,37 @@
+.trans-nav{
+    background: #3F5A1F;
+    color: rgb(241, 238, 238);
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    align-items: center;
+}
+
+.trans-nav p{
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 9px;
+}
+
+.add-trans-modal-bg{
+    background: rgba(0, 0, 0, 0.281);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+}
+
+.add-trans-modal{
+    height: 90vh;
+    width: 500px;
+    background: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow-y: scroll;
+    overflow-x: hidden;
+}

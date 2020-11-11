@@ -1,6 +1,142 @@
 {
-  "Users":[{
-    "username": "admin123",
-    "password": "admin123"
-  }]
+  "Users": [
+    {
+      "username": "admin123",
+      "password": "admin123"
+    }
+  ],
+  "Apparatus": [
+    {
+      "id": 1,
+      "itemName": "taetae",
+      "Qty": 765,
+      "borrowed": 28,
+      "measurement": "ml"
+    },
+    {
+      "itemName": "try1",
+      "Qty": 0,
+      "borrowed": 3,
+      "id": 2,
+      "measurement": "cm"
+    },
+    {
+      "itemName": "somethins",
+      "Qty": 1,
+      "borrowed": 3,
+      "id": 3,
+      "measurement": "lt"
+    },
+    {
+      "itemName": "asdasdasd",
+      "Qty": "2",
+      "measurement": "ml",
+      "borrowed": 0,
+      "id": 4
+    },
+    {
+      "itemName": "222222",
+      "Qty": "2",
+      "measurement": "ml",
+      "borrowed": 0,
+      "id": 5
+    },
+    {
+      "itemName": "qqqqq",
+      "Qty": 0,
+      "measurement": "pcs",
+      "borrowed": 1,
+      "id": 6
+    }
+  ],
+  "Chemicals": [
+    {
+      "id": 1,
+      "itemName": "fissure",
+      "Qty": 10,
+      "borrowed": 14,
+      "measurement": "mg"
+    },
+    {
+      "itemName": "pee",
+      "Qty": 2,
+      "measurement": "ltrs",
+      "borrowed": 5,
+      "id": 3
+    },
+    {
+      "itemName": "magnet",
+      "Qty": 1,
+      "measurement": "mg",
+      "borrowed": 6,
+      "id": 4
+    },
+    {
+      "itemName": "nitrogen",
+      "Qty": "90",
+      "measurement": "ltrs",
+      "borrowed": 0,
+      "id": 5
+    }
+  ],
+  "Transactions": [
+    {
+      "id": 1,
+      "student_num": "2017-101211",
+      "student_name": "dawn bugay",
+      "prof_name": "Yawa Cruz",
+      "date_borrowed": "11/11/2020",
+      "return_date": "11/20/2020",
+      "chemicals": [],
+      "apparatus": [
+        {
+          "id": 1,
+          "borrowed": 4
+        },
+        {
+          "id": 1,
+          "borrowed": 4
+        }
+      ]
+    },
+    {
+      "student_num": "2017-101211",
+      "student_name": "dawn bugay",
+      "prof_name": "maam gertz",
+      "date_borrowed": "2020-11-11",
+      "return_date": "2020-11-20",
+      "chemicals": [],
+      "apparatus": [
+        {
+          "id": "1",
+          "borrowed": 2
+        }
+      ],
+      "id": 2
+    },
+    {
+      "student_num": "asdasdasd",
+      "student_name": "asdasdad",
+      "prof_name": "asdasdasd",
+      "date_borrowed": "2020-11-11",
+      "return_date": "2020-11-18",
+      "chemicals": [
+        {
+          "id": "1",
+          "borrowed": 2
+        }
+      ],
+      "apparatus": [
+        {
+          "id": "1",
+          "borrowed": 2
+        },
+        {
+          "id": "3",
+          "borrowed": 1
+        }
+      ],
+      "id": 3
+    }
+  ]
 }

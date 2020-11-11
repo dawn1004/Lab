@@ -1,7 +1,7 @@
-const { app, BrowserWindow, ipcMain } = require('electron');
+const { app, BrowserWindow, ipcMain, dialog } = require('electron');
 const path = require('path');
-const mongoose = require('mongoose')
 const axios = require('axios');
+
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) { // eslint-disable-line global-require
@@ -22,9 +22,8 @@ const createWindow = () => {
     }
   });
   authWindow = new BrowserWindow({
-    width: 700,
-    height: 520,
-    parent: mainWindow,
+    width: 800,
+    height: 620,
     webPreferences:{
       devTools: true,
       nodeIntegration: true,
@@ -66,9 +65,9 @@ app.on('activate', () => {
 // code. You can also put them in separate files and import them here.
 
 // hot reloader
-try {
-  require('electron-reloader')(module)
-} catch (_) {}
+// try {
+//   require('electron-reloader')(module)
+// } catch (_) {}
 
 //IPC EVENTS
 
@@ -93,6 +92,21 @@ ipcMain.on('auth:login', (event, data) => {
 })
 
 
+ipcMain.on('popup:alert', (event,data) => {
+
+  const Alert = require("electron-alert");
+
+  let alert = new Alert();
+  
+  let swalOptions = {
+    text: data.message,
+    type: "warning",
+    showCancelButton: false
+  };
+  
+  alert.fireFrameless(swalOptions, null, true, false);
+})
+
 
 
 //connect DB
@@ -113,5 +127,6 @@ try {
 } catch (error) {
   console.log({error: error})
 }
+
 
 
