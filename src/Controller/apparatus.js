@@ -24,14 +24,41 @@ function addApparatus(){
     }
 
     axios.post('http://localhost:3000/Apparatus',{
-        "itemName": itemname,
-        "Qty": Qty,
-        "measurement": measurement,
-        "borrowed": 0
+        itemName: itemname,
+        Qty: Qty,
+        measurement: measurement,
+        borrowed: 0,
+        damage: 0
     })
     .then(function (response) {
-      console.log(response.data);
-      location.reload(); 
+      const appa = response.data;
+      const today = new Date().toISOString().slice(0, 10);
+      axios.get(`http://localhost:3000/DailyReports?date=${today}`)
+        .then((res)=> {
+          res = res.data[0];
+          
+          res.apparatus.push({
+            itemName: appa.itemName,
+            id: appa.id,
+            measurement: appa.measurement,
+            borrowed: 0,
+            Qty: appa.Qty
+          })
+
+          axios.put(`http://localhost:3000/DailyReports/${res.id}`, res)
+          .then((res)=> {
+            location.reload(); 
+          })
+          .catch(function (error) {
+            console.log(error);
+          })
+          
+        })
+        .catch(function (error) {
+          console.log(error);
+        })
+
+        // location.reload(); 
     })
     .catch(function (error) {
       console.log(error);
@@ -51,6 +78,7 @@ function getAllApparatusitem(){
                   <span>${item.Qty}</span><span class="measurement">${item.measurement}</span>
                 </td>
                 <td>${item.borrowed}</td>
+                <td>${item.damage}</td>
                 <td onclick="showEditApparatusModal(${item.Qty}, ${item.id}, '${item.itemName}')">Edit</td>
             </tr>`;
       })

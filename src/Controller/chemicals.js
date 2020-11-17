@@ -11,6 +11,7 @@ function getAllChemicalitem(){
                   <span>${item.Qty}</span><span class="measurement">${item.measurement}</span>
                 </td>
                 <td>${item.borrowed}</td>
+                
                 <td onclick="showEditChemicalModal(${item.Qty}, ${item.id}, '${item.itemName}')">Edit</td>
             </tr>`;
       })
@@ -46,14 +47,41 @@ function addChemical(){
     }
 
     axios.post('http://localhost:3000/Chemicals',{
-        "itemName": itemname,
-        "Qty": Qty,
-        "measurement": measurement,
-        "borrowed": 0
+        itemName: itemname,
+        Qty: Qty,
+        measurement: measurement,
+        borrowed: 0,
+        damage: 0
     })
     .then(function (response) {
-      console.log(response.data);
-      location.reload(); 
+        // asd
+        const chem = response.data;
+        const today = new Date().toISOString().slice(0, 10);
+        axios.get(`http://localhost:3000/DailyReports?date=${today}`)
+          .then((res)=> {
+            res = res.data[0];
+            
+            res.chemicals.push({
+              itemName: chem.itemName,
+              id: chem.id,
+              measurement: chem.measurement,
+              borrowed: 0,
+              Qty: chem.Qty
+            })
+  
+            axios.put(`http://localhost:3000/DailyReports/${res.id}`, res)
+            .then((res)=> {
+              location.reload(); 
+            })
+            .catch(function (error) {
+              console.log(error);
+            })
+            
+          })
+          .catch(function (error) {
+            console.log(error);
+          })
+        // asd
     })
     .catch(function (error) {
       console.log(error);

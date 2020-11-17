@@ -108,14 +108,48 @@
           <button 
           class="btn btn-danger ml-4 mt-3 mb-5"
           onclick="closeBorrowModal()"
-          >Cancel</button>
+          >Cancel</button> 
 
-          <button 
+          <button
           onclick="saveTransaction()"
           class="btn btn-success ml-2 mt-3 mb-5"
           >Save</button>
         </div>
       </div>
+
+      <!-- return dialog -->
+     <div class="return-barrowed-dialog">
+      <div class="card return-barrowed-card">
+        <h4>TRANSACTION NO: # <span class="trans-num"></span></h4>
+        <h4>Apparatus List</h4>
+
+        <table class="table table-borderless">
+          <thead>
+            <tr>
+              <th scope="col">Item Name</th>
+              <th scope="col">Qty</th>
+              <th scope="col">Damage</th>
+            </tr>
+          </thead>
+          <tbody class="table-return-item">
+            <tr>
+              <td></td>
+              <td>No Apparatus borrowed</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="buttons">
+          <buttn 
+          onclick="returnTransaction()"
+          class="btn btn-primary" style="width: 100px;">Return</buttn>
+          <buttn 
+          onclick="hideReturnDialog()"
+          class="btn btn-danger" style="width: 100px;">Cancel</buttn>
+        </div>
+
+      </div>
+     </div>
 
     </section>
 <!-- ############## Transaction End#################### -->
@@ -145,7 +179,8 @@
           <tr>
             <th scope="col">Item Name</th>
             <th scope="col">Quantity</th>
-            <th scope="col">borrowed</th>
+            <th scope="col">Borrowed</th>
+            <th scope="col">Damage</th>
             <th scope="col">Actions</th>
           </tr>
         </thead>
@@ -371,6 +406,7 @@
 
     <section id="report">
       <h1>report</h1>
+      
     </section>
 
 
@@ -382,6 +418,7 @@
   <script src="../Controller/apparatus.js"></script>
   <script src="../Controller/chemicals.js"></script>
   <script src="../Controller/transaction.js"></script>
+  <script src="../Controller/Report.js"></script>
 
   <script src="../bootstrap-4.5.3-dist/js/bootstrap.min.js"></script>
 </html>

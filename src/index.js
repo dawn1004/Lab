@@ -104,7 +104,7 @@ ipcMain.on('popup:alert', (event,data) => {
     showCancelButton: false
   };
   
-  alert.fireFrameless(swalOptions, null, true, false);
+  alert.fireWithFrame(swalOptions, null, true, false);
 })
 
 
