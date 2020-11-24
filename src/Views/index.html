@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../bootstrap-4.5.3-dist/css/bootstrap.min.css" >
     <link rel="stylesheet" href="../styles/chemical.css">
     <link rel="stylesheet" href="../styles/transaction.css">
+    <link rel="stylesheet" href="../styles/home.css">
   </head>
   <body>
 
@@ -21,9 +22,29 @@
       </ul>
     </div>
 
+<!-- ############## Home Start#################### -->
+
     <section id="home">
-      <h1>HOME</h1>
+      <div class="heading-apparatus shadow">
+        <h3>Notifications</h3>
+
+      </div>
+      <div class="card ml-5" style="width: 600px; min-height: 550px;">
+        <div class="card-body">
+          <div class="noti-container">
+            <!-- <div class="noti">
+              <p class="date-noti">Date: <span class="date-noti">11-18-2020</span></p>
+              <p class="body-noti">Loading</p>
+            </div> -->
+          </div>
+        </div>
+      </div>
+
+      
     </section>
+
+<!-- ############## Home End#################### -->
+
 
 <!-- ############## Transaction Start#################### -->
 
@@ -160,19 +181,25 @@
 <!-- ##############APPARATUS Start#################### -->
     <section id="apparatus">
       <div class="heading-apparatus shadow">
+
+        <h3>Apparatus</h3>
+        
         <div class="search-apparatus">
           <input type="text" 
           class="form-control shadow-sm"
-          style="width: 500px;"
+          style="width: 300px;"
           placeholder="Search Item"
           >
           <button 
           onclick="openAddApparatusModal()"
-          class="btn btn-success ml-5">Add Item</button>
+          class="btn btn-success">
+          Add Item</button>
         </div>
+
+
       </div>
 
-      <h2 class="mt-4 ml-4 mb-2">Apparatus</h2>
+      
 
       <table class="table ml-4 mt-2" style="width: 800px;">
         <thead class="bg-success rounded text-white">
@@ -285,26 +312,28 @@
 <!-- ##############Chemical Start#################### -->
     <section id="chemical">
       <div class="heading-apparatus shadow">
+        <h3>Chemicals</h3>
         <div class="search-apparatus">
           <input type="text" 
           class="form-control shadow-sm"
-          style="width: 500px;"
+          style="width: 300px;"
           placeholder="Search Item"
           >
           <button 
           onclick="openAddChemicalModal()"
-          class="btn btn-success ml-5">Add Item</button>
+          class="btn btn-success">Add Item</button>
         </div>
+
       </div>
 
-      <h2 class="mt-4 ml-4 mb-2">Chemicals</h2>
 
       <table class="table ml-4 mt-2" style="width: 800px;">
         <thead class="bg-success rounded text-white">
           <tr>
             <th scope="col">Item Name</th>
             <th scope="col">Quantity</th>
-            <th scope="col">borrowed</th>
+            <th scope="col">Borrowed</th>
+            <th scope="col">Expiration</th>
             <th scope="col">Actions</th>
           </tr>
         </thead>
@@ -321,7 +350,7 @@
 
       
       <div class="modal-add-chemical-bg">
-        <div class="add-apparatus-modal">
+        <div class="add-chemical-modal">
           <h3 class="pt-4 pl-4 pb-4">Add Chemical</h3>
 
           <div class="form-group row px-4">
@@ -343,6 +372,15 @@
               <input 
               id="formChemicalMeasurement"
               type="text" class="form-control" placeholder="pcs">
+            </div>
+          </div>
+
+          <div class="form-group row px-4">
+            <label  class="col-sm-2 col-form-label">Exp Date</label>
+            <div class="col-sm-9">
+              <input type="Date" 
+              id="formChemExpiration"
+              class="form-control" >
             </div>
           </div>
 
@@ -404,10 +442,39 @@
 <!-- ##############Chemical End#################### -->
 
 
+
+<!-- ##############Report Start#################### -->
+
     <section id="report">
       <h1>report</h1>
+    <input type="date" class="searchReport1">
+    <button class="searchBtnReport" onclick="searchReport()">Search</button>
+
+      <title>Datenow</title>
+      <table class="table ml-4 mt-2" style="width: 800px;">
+        <thead class="bg-success rounded text-white">
+          <tr>
+            <th scope="col">Item Name</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">borrowed</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody class="tbody-dailyReports">
+          <tr>
+            <th ></th>
+            <td>Loading Records..</td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+
       
+
+
     </section>
+<!-- ##############Report End#################### -->
 
 
 
@@ -419,6 +486,7 @@
   <script src="../Controller/chemicals.js"></script>
   <script src="../Controller/transaction.js"></script>
   <script src="../Controller/Report.js"></script>
+  <script src="../Controller/notifications.js"></script>
 
   <script src="../bootstrap-4.5.3-dist/js/bootstrap.min.js"></script>
 </html>

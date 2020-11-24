@@ -192,7 +192,7 @@ function addTransaction(apparatus){
 
     decrementChemicals(chemicals)
 
-    updateDailyReport(chemicals,apparatus)
+    // updateDailyReport(chemicals,apparatus)
 
     axios.post(`http://localhost:3000/Transactions`,{
         student_num: formstudentNo,
@@ -216,43 +216,43 @@ function addTransaction(apparatus){
 
 
 //update the daily report
-function updateDailyReport(chemicals, apparatus){
-    const today = new Date().toISOString().slice(0, 10);
+// function updateDailyReport(chemicals, apparatus){
+//     const today = new Date().toISOString().slice(0, 10);
 
-    axios.get(`http://localhost:3000/DailyReports?date=${today}`)
-    .then(function (response) {
-      let reports = response.data[0];
+//     axios.get(`http://localhost:3000/DailyReports?date=${today}`)
+//     .then(function (response) {
+//       let reports = response.data[0];
 
-      chemicals.forEach(chem=>{
-        reports.chemicals.forEach(repchem=>{
-          if(chem.id == repchem.id){
-            repchem.borrowed+=chem.borrowed;
-          }
-        })
-      })
+//       chemicals.forEach(chem=>{
+//         reports.chemicals.forEach(repchem=>{
+//           if(chem.id == repchem.id){
+//             repchem.borrowed+=chem.borrowed;
+//           }
+//         })
+//       })
 
-      apparatus.forEach(appa=>{
-        reports.apparatus.forEach(repappa=>{
-          if(appa.id == repappa.id){
-            repappa.borrowed+= appa.borrowed;
-          }
-        })
-      })
-
-
-      axios.put(`http://localhost:3000/DailyReports/${reports.id}`,reports)
-      .then(function (response) {
-      })
-      .catch(function (error) {
-        console.log(error);
-      })
+//       apparatus.forEach(appa=>{
+//         reports.apparatus.forEach(repappa=>{
+//           if(appa.id == repappa.id){
+//             repappa.borrowed+= appa.borrowed;
+//           }
+//         })
+//       })
 
 
-    })
-    .catch(function (error) {
-      console.log(error);
-    })  
-}
+//       axios.put(`http://localhost:3000/DailyReports/${reports.id}`,reports)
+//       .then(function (response) {
+//       })
+//       .catch(function (error) {
+//         console.log(error);
+//       })
+
+
+//     })
+//     .catch(function (error) {
+//       console.log(error);
+//     })  
+// }
 
 
 function showReturnDialog(id){

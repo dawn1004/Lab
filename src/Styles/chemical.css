@@ -27,3 +27,13 @@
     transform: translate(-50%, -50%);
     display: none;
 }
+
+.add-chemical-modal{
+    width: 400px;
+    height: 350px;
+    background-color: white;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}

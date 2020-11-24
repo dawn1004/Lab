@@ -7,59 +7,88 @@
   ],
   "Apparatus": [
     {
-      "itemName": "tong",
-      "Qty": 377,
+      "itemName": "telescope",
+      "Qty": "500011",
       "measurement": "pcs",
-      "borrowed": 2,
-      "damage": 1,
+      "borrowed": 3,
+      "damage": 2,
       "id": 1
     },
     {
-      "itemName": "tube",
-      "Qty": 199,
+      "itemName": "tong",
+      "Qty": 42,
       "measurement": "pcs",
-      "borrowed": 1,
+      "borrowed": 2,
       "damage": 0,
       "id": 2
     },
     {
-      "itemName": "cylinder",
-      "Qty": 989,
+      "itemName": "scope",
+      "Qty": "12",
       "measurement": "pcs",
       "borrowed": 0,
-      "damage": 1,
+      "damage": 0,
       "id": 3
     }
   ],
   "Chemicals": [
     {
-      "itemName": "iron",
-      "Qty": 190,
-      "measurement": "grams",
-      "borrowed": 0,
+      "itemName": "Oxygen",
+      "Qty": "5000",
+      "measurement": "kg",
+      "borrowed": 3,
+      "expiration": "2020-11-30",
       "damage": 0,
       "id": 1
     },
     {
-      "itemName": "carbon",
-      "Qty": 188,
-      "measurement": "kg",
+      "itemName": "Carbon",
+      "Qty": 498,
+      "measurement": "gm",
       "borrowed": 2,
+      "expiration": "2020-12-12",
       "damage": 0,
       "id": 2
+    },
+    {
+      "itemName": "hindi dapat",
+      "Qty": "7",
+      "measurement": "pcs",
+      "borrowed": 0,
+      "expiration": "2020-11-10",
+      "damage": 0,
+      "id": 3
+    },
+    {
+      "itemName": "asd",
+      "Qty": "3",
+      "measurement": "asd",
+      "borrowed": 0,
+      "expiration": "2020-11-24",
+      "damage": 0,
+      "id": 4
+    },
+    {
+      "itemName": "asdas33",
+      "Qty": 1,
+      "measurement": "asdasd",
+      "borrowed": 1,
+      "expiration": "2020-11-25",
+      "damage": 0,
+      "id": 5
     }
   ],
   "Transactions": [
     {
-      "student_num": "2017-101211",
-      "student_name": "Dawn bugay",
-      "prof_name": "tae",
-      "date_borrowed": "2020-11-17",
-      "return_date": "2020-11-18",
+      "student_num": "2000000",
+      "student_name": "kiki",
+      "prof_name": "asdasdas",
+      "date_borrowed": "2020-11-24",
+      "return_date": "2020-11-25",
       "chemicals": [
         {
           "id": "2",
-          "borrowed": 2
+          "borrowed": 1
         }
       ],
       "apparatus": [
@@ -69,77 +98,105 @@
         },
         {
           "id": "2",
-          "borrowed": 1
+          "borrowed": 2
         }
       ],
-      "id": 1
-    }
-  ],
-  "History": [
+      "id": 2
+    },
     {
-      "student_num": "2017-22222",
-      "student_name": "Kishingi 19",
-      "prof_name": "asdasdas",
-      "date_borrowed": "2020-11-17",
-      "return_date": "2020-11-19",
+      "student_num": "asdasd",
+      "student_name": "asdasd",
+      "prof_name": "asdasdasd",
+      "date_borrowed": "2020-11-24",
+      "return_date": "2020-11-22",
       "chemicals": [],
       "apparatus": [
         {
           "id": "1",
           "borrowed": 2
-        },
-        {
-          "id": "3",
-          "borrowed": 1
         }
       ],
-      "returned_date": "2020-11-17",
-      "id": 1
-    }
-  ],
-  "DailyReports": [
+      "id": 3
+    },
     {
-      "date": "2020-11-17",
+      "student_num": "2017101211",
+      "student_name": "kishinki 2011",
+      "prof_name": "asdaasdasd",
+      "date_borrowed": "2020-11-24",
+      "return_date": "2020-11-24",
       "chemicals": [
         {
-          "itemName": "iron",
-          "id": 1,
-          "measurement": "grams",
-          "borrowed": 0,
-          "Qty": 190
-        },
-        {
-          "itemName": "carbon",
-          "id": 2,
-          "measurement": "kg",
-          "borrowed": 2,
-          "Qty": 190
+          "id": "5",
+          "borrowed": 1
         }
       ],
       "apparatus": [
         {
-          "itemName": "tong",
-          "id": 1,
-          "measurement": "pcs",
-          "borrowed": 4,
-          "Qty": 380
-        },
-        {
-          "itemName": "tube",
-          "id": 2,
-          "measurement": "pcs",
-          "borrowed": 1,
-          "Qty": 200
-        },
-        {
-          "itemName": "cylinder",
-          "id": 3,
-          "measurement": "pcs",
-          "borrowed": 1,
-          "Qty": 990
+          "id": "1",
+          "borrowed": 1
         }
       ],
-      "id": 1
+      "id": 4
     }
-  ]
+  ],
+  "History": [
+    {
+      "student_num": "2017-1012111",
+      "student_name": "dawnhae",
+      "prof_name": "123123",
+      "date_borrowed": "2020-11-18",
+      "return_date": "2020-11-19",
+      "chemicals": [
+        {
+          "id": "1",
+          "borrowed": 2
+        },
+        {
+          "id": "2",
+          "borrowed": 1
+        }
+      ],
+      "apparatus": [],
+      "returned_date": "2020-11-18",
+      "id": 1
+    },
+    {
+      "student_num": "2020-101211",
+      "student_name": "dawn bugay",
+      "prof_name": "mam ang",
+      "date_borrowed": "2020-11-20",
+      "return_date": "2020-11-23",
+      "chemicals": [
+        {
+          "id": "1",
+          "borrowed": 1
+        }
+      ],
+      "apparatus": [
+        {
+          "id": "1",
+          "borrowed": 2
+        }
+      ],
+      "returned_date": "2020-11-24",
+      "id": 2
+    },
+    {
+      "student_num": "asdas",
+      "student_name": "dasda",
+      "prof_name": "sdasdasd",
+      "date_borrowed": "2020-11-24",
+      "return_date": "2020-11-26",
+      "chemicals": [],
+      "apparatus": [
+        {
+          "id": "1",
+          "borrowed": 2
+        }
+      ],
+      "returned_date": "2020-11-24",
+      "id": 3
+    }
+  ],
+  "DailyReports": []
 }

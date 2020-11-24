@@ -79,7 +79,12 @@ function getAllApparatusitem(){
                 </td>
                 <td>${item.borrowed}</td>
                 <td>${item.damage}</td>
-                <td onclick="showEditApparatusModal(${item.Qty}, ${item.id}, '${item.itemName}')">Edit</td>
+                <td>
+                  <button 
+                  onclick="showEditApparatusModal(${item.Qty}, ${item.id}, '${item.itemName}')"
+                  class="btn btn-success">Edit </button>
+                </td>
+
             </tr>`;
       })
 

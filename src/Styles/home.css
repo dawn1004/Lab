@@ -1,0 +1,13 @@
+.noti-container{}
+
+.noti{
+    background: #f1f1f1;
+    border-radius: 5px;
+    padding: 6px 10px;
+    margin-bottom: 10px;
+}
+
+.date-noti{
+    font-size: 12px;
+    color: rgb(49, 49, 49);
+}

@@ -11,8 +11,13 @@ function getAllChemicalitem(){
                   <span>${item.Qty}</span><span class="measurement">${item.measurement}</span>
                 </td>
                 <td>${item.borrowed}</td>
+                <td>${item.expiration}</td>
                 
-                <td onclick="showEditChemicalModal(${item.Qty}, ${item.id}, '${item.itemName}')">Edit</td>
+                <td>
+                  <button 
+                  onclick="showEditChemicalModal(${item.Qty}, ${item.id}, '${item.itemName}')"
+                  class="btn btn-success">Edit </button>
+                </td>
             </tr>`;
       })
 
@@ -40,7 +45,8 @@ function addChemical(){
     let itemname = document.querySelector("#formChemicalItemName").value;
     let Qty = document.querySelector("#formChemicalQty").value;
     let measurement = document.querySelector("#formChemicalMeasurement").value;
-    
+    let expiration = document.querySelector("#formChemExpiration").value;
+
     if(itemname =="" || Qty =="" || measurement ==""){
         ipcRenderer.send("popup:alert", {message: "Please complete the form"});
         return;
@@ -51,6 +57,7 @@ function addChemical(){
         Qty: Qty,
         measurement: measurement,
         borrowed: 0,
+        expiration: expiration,
         damage: 0
     })
     .then(function (response) {

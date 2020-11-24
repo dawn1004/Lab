@@ -37,6 +37,8 @@ const createWindow = () => {
   // Open the DevTools.
   mainWindow.webContents.openDevTools();
   authWindow.webContents.openDevTools();
+  authWindow.setMenuBarVisibility(false);
+  mainWindow.setMenuBarVisibility(false);
 };
 
 // This method will be called when Electron has finished
@@ -65,9 +67,9 @@ app.on('activate', () => {
 // code. You can also put them in separate files and import them here.
 
 // hot reloader
-// try {
-//   require('electron-reloader')(module)
-// } catch (_) {}
+try {
+  require('electron-reloader')(module)
+} catch (_) {}
 
 //IPC EVENTS
 
