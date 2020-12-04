@@ -11,11 +11,15 @@ links.forEach((link, index) => {
     const apparatus = document.querySelector("#apparatus");
     const chemical = document.querySelector("#chemical");
     const report = document.querySelector("#report");
+    const ActivityLog = document.querySelector("#ActivityLog");
+    const TransHistory = document.querySelector("#TransHistory");
     home.style.display = "none"
     transaction.style.display = "none"
     apparatus.style.display = "none"
     chemical.style.display = "none"
     report.style.display = "none"
+    ActivityLog.style.display = "none"
+    TransHistory.style.display = "none"
 
     where(index);
 
@@ -44,6 +48,12 @@ const where =(index)=>{
     chemical.style.display = "block"
   }
   else if(index == 4) {
+    ActivityLog.style.display = "block"
+  }
+  else if(index == 5) {
+    TransHistory.style.display = "block"
+  }
+  else if(index == 6) {
     report.style.display = "block"
   }
 }

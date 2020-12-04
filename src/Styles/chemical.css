@@ -30,7 +30,8 @@
 
 .add-chemical-modal{
     width: 400px;
-    height: 350px;
+    height: auto;
+    padding-bottom: 30px;
     background-color: white;
     top: 50%;
     left: 50%;

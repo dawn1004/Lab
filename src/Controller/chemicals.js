@@ -1,17 +1,17 @@
-function getAllChemicalitem(){
-    axios.get('http://localhost:3000/Chemicals')
+function getAllChemicalitem(search){
+    axios.get(`http://localhost:3000/Chemicals?itemName_like=${search}&_sort=id&_order=desc`)
     .then(function (response) {
       let tr="";
       let tbody = document.querySelector(".tbody-chemicals-item");
 
       response.data.forEach(item=>{
           tr+=`<tr>
+                <td >${item.itemCode}</td>
                 <td >${item.itemName}</td>
                 <td>
                   <span>${item.Qty}</span><span class="measurement">${item.measurement}</span>
                 </td>
                 <td>${item.borrowed}</td>
-                <td>${item.expiration}</td>
                 
                 <td>
                   <button 
@@ -28,9 +28,15 @@ function getAllChemicalitem(){
       console.log(error);
     })
 }
-getAllChemicalitem()
+getAllChemicalitem("")
 
 
+const chemSearchInput = document.querySelector(".chem-input-search")
+chemSearchInput.addEventListener("keyup",({target})=>{
+  getAllChemicalitem(target.value)
+})
+
+////////////////
 function openAddChemicalModal(){
     const modal = document.querySelector(".modal-add-chemical-bg");
     modal.style.display ="block";
@@ -42,52 +48,53 @@ function closeAddModalChemical(){
 }
 
 function addChemical(){
+    let itemCode = document.querySelector("#formChemicalItemCode").value;
     let itemname = document.querySelector("#formChemicalItemName").value;
     let Qty = document.querySelector("#formChemicalQty").value;
     let measurement = document.querySelector("#formChemicalMeasurement").value;
-    let expiration = document.querySelector("#formChemExpiration").value;
 
-    if(itemname =="" || Qty =="" || measurement ==""){
+    if(itemCode == "" || itemname =="" || Qty =="" || measurement ==""){
         ipcRenderer.send("popup:alert", {message: "Please complete the form"});
         return;
     }
 
     axios.post('http://localhost:3000/Chemicals',{
+        itemCode: itemCode,
         itemName: itemname,
         Qty: Qty,
         measurement: measurement,
         borrowed: 0,
-        expiration: expiration,
         damage: 0
     })
     .then(function (response) {
         // asd
-        const chem = response.data;
-        const today = new Date().toISOString().slice(0, 10);
-        axios.get(`http://localhost:3000/DailyReports?date=${today}`)
-          .then((res)=> {
-            res = res.data[0];
+        // const chem = response.data;
+        // const today = new Date().toISOString().slice(0, 10);
+        // axios.get(`http://localhost:3000/DailyReports?date=${today}`)
+        //   .then((res)=> {
+        //     res = res.data[0];
             
-            res.chemicals.push({
-              itemName: chem.itemName,
-              id: chem.id,
-              measurement: chem.measurement,
-              borrowed: 0,
-              Qty: chem.Qty
-            })
+        //     res.chemicals.push({
+        //       itemName: chem.itemName,
+        //       id: chem.id,
+        //       measurement: chem.measurement,
+        //       borrowed: 0,
+        //       Qty: chem.Qty
+        //     })
   
-            axios.put(`http://localhost:3000/DailyReports/${res.id}`, res)
-            .then((res)=> {
-              location.reload(); 
-            })
-            .catch(function (error) {
-              console.log(error);
-            })
+        //     axios.put(`http://localhost:3000/DailyReports/${res.id}`, res)
+        //     .then((res)=> {
+        //       location.reload(); 
+        //     })
+        //     .catch(function (error) {
+        //       console.log(error);
+        //     })
             
-          })
-          .catch(function (error) {
-            console.log(error);
-          })
+        //   })
+        //   .catch(function (error) {
+        //     console.log(error);
+        //   })
+        location.reload(); 
         // asd
     })
     .catch(function (error) {
@@ -120,12 +127,35 @@ function saveEditChemical(){
   
     axios.get(`http://localhost:3000/Chemicals/${targetId}`)
     .then(function (response) {
+        let added = newQty-response.data.Qty
         item=response.data;
         item.Qty=newQty
+        console.log(added)
+
+        const today = new Date().toISOString().slice(0, 10);
+        let stockHistory = {
+          date: today,
+          itemCode: response.data.itemCode,
+          itemName: response.data.itemName,
+          stockAdded: added,
+          measurement: response.data.measurement
+        }
+
+
         axios.put(`http://localhost:3000/Chemicals/${targetId}`,item)
         .then(function (response) {
           console.log(response.data);
-          location.reload(); 
+          // location.reload(); 
+
+            axios.post(`http://localhost:3000/stockHistory`,stockHistory)
+            .then(function (response) {
+              console.log(response.data);
+              location.reload(); 
+            })
+            .catch(function (error) {
+              console.log(error);
+            })
+            
         })
         .catch(function (error) {
           console.log(error);

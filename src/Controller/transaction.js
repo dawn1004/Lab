@@ -9,6 +9,9 @@ function getAllTransactions(){
                 <td >${item.id}</td>
                 <td>${item.student_num}</td>
                 <td>${item.student_name}</td>
+                <td>${item.subject}</td>
+                <td>${item.section}</td>
+                <td>${item.prof_name}</td>
                 <td>${item.date_borrowed}</td>
                 <td>${item.return_date}</td>
                 <td >
@@ -64,9 +67,9 @@ function openBarrowModal(){
 
       response.data.forEach(item=>{
         textBoxes+=`
-            <div class="form-group row px-4">
-                <label  class="col-sm-4 col-form-label">${item.itemName}</label>
-                <div class="col-sm-4">
+            <div class="list-chemss form-group row px-4">
+                <label  class=" col-form-label">${item.itemName}</label>
+                <div class="">
                 <input type="number" 
                 id="chems^${item.id}"
                 class="form-control chems-textfield"
@@ -93,7 +96,11 @@ function saveTransaction(){
     const formstudentName = document.querySelector("#formstudentName").value
     const formProfName = document.querySelector("#formProfName").value
     const formReturnDate = document.querySelector("#formReturnDate").value
-    if(formstudentNo == "" || formstudentName =="" || formProfName=="" || formReturnDate==""){
+    const formSubject = document.querySelector("#formSubject").value
+    const formSection = document.querySelector("#formSection").value
+    if(
+      formSubject=="" || formSection == "" || formstudentNo == "" || 
+      formstudentName =="" || formProfName=="" || formReturnDate==""){
         ipcRenderer.send("popup:alert", {message: "Please complete the form"});
         return
     }
@@ -187,16 +194,29 @@ function addTransaction(apparatus){
     const formstudentName = document.querySelector("#formstudentName").value
     const formProfName = document.querySelector("#formProfName").value
     const formReturnDate = document.querySelector("#formReturnDate").value
+    const formSubject = document.querySelector("#formSubject").value
+    const formSection = document.querySelector("#formSection").value
     const date_borrowed = new Date().toISOString().slice(0, 10);
     const chemicals = checkAddChems()
 
     decrementChemicals(chemicals)
 
+
     // updateDailyReport(chemicals,apparatus)
 
-    axios.post(`http://localhost:3000/Transactions`,{
+    let endpoint=""; 
+
+    if(apparatus.length > 0){
+      endpoint="Transactions"
+    }else{
+      endpoint="History"
+    }
+
+    axios.post(`http://localhost:3000/${endpoint}`,{
         student_num: formstudentNo,
         student_name: formstudentName,
+        subject: formSubject,
+        section: formSection,
         prof_name: formProfName,
         date_borrowed: date_borrowed,
         return_date: formReturnDate,
@@ -207,7 +227,7 @@ function addTransaction(apparatus){
       console.log(response.data);
       setTimeout(() => {
         location.reload(); 
-      }, 500);
+      }, 700);
     })
     .catch(function (error) {
       console.log(error);
@@ -395,12 +415,9 @@ function returnTransaction(){
           axios.put(`http://localhost:3000/Apparatus/${item.aparatusID}`,appa)
           .then(function (response) {
             console.log(response.data);
-
-            
-
             setTimeout(() => {
               location.reload(); 
-            }, 1000);
+            }, 700);
           })
           .catch(function (error) {
             console.log(error);

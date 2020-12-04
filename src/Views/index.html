@@ -2,23 +2,26 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Hello World!</title>
+    <title>CS Labaratory</title>
     <link rel="stylesheet" href="../styles/index.css">
     <link rel="stylesheet" href="../styles/apparatus.css">
     <link rel="stylesheet" href="../bootstrap-4.5.3-dist/css/bootstrap.min.css" >
     <link rel="stylesheet" href="../styles/chemical.css">
     <link rel="stylesheet" href="../styles/transaction.css">
     <link rel="stylesheet" href="../styles/home.css">
+    <link rel="stylesheet" href="../styles/TransHistory.css">
   </head>
   <body>
 
     <div class="drawer-nav bg-success">
       <ul class="nav-links">
-        <li>HOME</li>
-        <li>TRANSACTION</li>
-        <li>APPARATUS</li>
-        <li>CHEMICALS</li>
-        <li>REPORTS</li>
+        <li> <img class="icons" src="../assets/icons/home.svg" alt=""> HOME</li>
+        <li> <img class="icons" src="../assets/icons/transaction.svg" alt=""> TRANSACTION</li>
+        <li> <img class="icons" src="../assets/icons/apparatus.svg" alt=""> APPARATUS</li>
+        <li> <img class="icons" src="../assets/icons/chemicals.svg" alt=""> CHEMICALS</li>
+        <li> <img class="icons" src="../assets/icons/addingStock.svg" alt=""> ADDING STOCK HISTORY</li>
+        <li> <img class="icons" src="../assets/icons/tansHistory.svg" alt=""> TRANSACTION HISTORY</li>
+        <li> <img class="icons" src="../assets/icons/reports.svg" alt=""> REPORTS</li>
       </ul>
     </div>
 
@@ -32,15 +35,10 @@
       <div class="card ml-5" style="width: 600px; min-height: 550px;">
         <div class="card-body">
           <div class="noti-container">
-            <!-- <div class="noti">
-              <p class="date-noti">Date: <span class="date-noti">11-18-2020</span></p>
-              <p class="body-noti">Loading</p>
-            </div> -->
+
           </div>
         </div>
       </div>
-
-      
     </section>
 
 <!-- ############## Home End#################### -->
@@ -61,7 +59,10 @@
             <th scope="col">#</th>
             <th scope="col">Student No.</th>
             <th scope="col">Student Name</th>
-            <th scope="col">Date Barrowed</th>
+            <th scope="col">Subject</th>
+            <th scope="col">Section</th>
+            <th scope="col">Intsructor</th>
+            <th scope="col">Date Borrowed</th>
             <th scope="col">Return Date</th>
             <th scope="col">Action</th>
           </tr>
@@ -81,6 +82,10 @@
 
       <div class="add-trans-modal-bg">
         <div class="add-trans-modal">
+          <img onclick="closeBorrowModal()" 
+          class="backarrow" 
+          src="../assets/icons/back.svg" 
+          alt="">
           <h3 class="ml-4 mt-3 mb-4">Borrow Form</h3>
 
           <div class="form-group row px-4">
@@ -100,7 +105,24 @@
             </div>
           </div>
           <div class="form-group row px-4">
-            <label  class="col-sm-4 col-form-label">Prof Name</label>
+            <label  class="col-sm-4 col-form-label">Subject</label>
+            <div class="col-sm-7">
+              <input type="text" 
+              id="formSubject"
+              class="form-control" placeholder="Chemistry">
+            </div>
+          </div>
+          <div class="form-group row px-4">
+            <label  class="col-sm-4 col-form-label">Section</label>
+            <div class="col-sm-7">
+              <input type="text" 
+              id="formSection"
+              class="form-control" 
+              placeholder="BSIT-4CG1">
+            </div>
+          </div>
+          <div class="form-group row px-4">
+            <label  class="col-sm-4 col-form-label">Instructor</label>
             <div class="col-sm-7">
               <input type="text" 
               id="formProfName"
@@ -186,7 +208,7 @@
         
         <div class="search-apparatus">
           <input type="text" 
-          class="form-control shadow-sm"
+          class="appa-input-search form-control shadow-sm"
           style="width: 300px;"
           placeholder="Search Item"
           >
@@ -204,6 +226,7 @@
       <table class="table ml-4 mt-2" style="width: 800px;">
         <thead class="bg-success rounded text-white">
           <tr>
+            <th scope="col">Item Code</th>
             <th scope="col">Item Name</th>
             <th scope="col">Quantity</th>
             <th scope="col">Borrowed</th>
@@ -225,6 +248,15 @@
       <div class="modal-add-apparatus-bg">
         <div class="add-apparatus-modal">
           <h3 class="pt-4 pl-4 pb-4">Add Apparatus</h3>
+
+          <div class="form-group row px-4">
+            <label  class="col-sm-4 col-form-label">Item Code</label>
+            <div class="col-sm-7">
+              <input type="text" 
+              id="formApparatusItemCode"
+              class="form-control" placeholder="Telescope">
+            </div>
+          </div>
 
           <div class="form-group row px-4">
             <label  class="col-sm-2 col-form-label">Name</label>
@@ -315,7 +347,7 @@
         <h3>Chemicals</h3>
         <div class="search-apparatus">
           <input type="text" 
-          class="form-control shadow-sm"
+          class="chem-input-search form-control shadow-sm"
           style="width: 300px;"
           placeholder="Search Item"
           >
@@ -330,10 +362,10 @@
       <table class="table ml-4 mt-2" style="width: 800px;">
         <thead class="bg-success rounded text-white">
           <tr>
+            <th scope="col">Item Code</th>
             <th scope="col">Item Name</th>
             <th scope="col">Quantity</th>
             <th scope="col">Borrowed</th>
-            <th scope="col">Expiration</th>
             <th scope="col">Actions</th>
           </tr>
         </thead>
@@ -353,6 +385,15 @@
         <div class="add-chemical-modal">
           <h3 class="pt-4 pl-4 pb-4">Add Chemical</h3>
 
+
+          <div class="form-group row px-4">
+            <label  class="col-sm-4 col-form-label">Item Code</label>
+            <div class="col-sm-7">
+              <input type="text" 
+              id="formChemicalItemCode"
+              class="form-control" placeholder="CH-****">
+            </div>
+          </div>
           <div class="form-group row px-4">
             <label  class="col-sm-2 col-form-label">Name</label>
             <div class="col-sm-9">
@@ -372,15 +413,6 @@
               <input 
               id="formChemicalMeasurement"
               type="text" class="form-control" placeholder="pcs">
-            </div>
-          </div>
-
-          <div class="form-group row px-4">
-            <label  class="col-sm-2 col-form-label">Exp Date</label>
-            <div class="col-sm-9">
-              <input type="Date" 
-              id="formChemExpiration"
-              class="form-control" >
             </div>
           </div>
 
@@ -442,37 +474,83 @@
 <!-- ##############Chemical End#################### -->
 
 
+<!-- ##############Activity log Start#################### -->
+
+    <section id="ActivityLog">
+      <div class="heading-apparatus shadow">
+        <h3>Adding Stock History</h3>
+  
+      </div>
+      <table class="table ml-4 mt-2" style="width: 800px;">
+        <thead class="bg-success rounded text-white">
+          <tr>
+            <th scope="col">Date</th>
+            <th scope="col">Item Code</th>
+            <th scope="col">Item Name</th>
+            <th scope="col">Stock Added</th>
+          </tr>
+        </thead>
+        <tbody class="tbody-addingStock-item">
+          <tr>
+            <td align="center" colspan="4">Loading Records...</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+<!-- ##############Activity log End#################### -->
+
+
+
+
+
+<!-- ##############Trans History Start#################### -->
+
+<section id="TransHistory">
+
+  <div class="heading-apparatus shadow">
+    <h3>Transaction History</h3>
+
+  </div>
+  <table class="table ml-4 mt-2" style="width: 800px;">
+    <thead class="bg-success rounded text-white">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Student No.</th>
+        <th scope="col">Student Name</th>
+        <th scope="col">Subject</th>
+        <th scope="col">Section</th>
+        <th scope="col">Instructor</th>
+        <th scope="col">Date Borrowed</th>
+        <th scope="col">Returned Date</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody class="tbody-transHistory-item">
+      <tr>
+        <td align="center" colspan="9">Loading Records...</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <div class="modal-itemShow-bg">
+    
+    <div class="itemShow-modal">
+      <!-- <h4></h4> -->
+    </div>
+  </div>
+
+
+</section>
+<!-- ##############Trans History End#################### -->
+
+
+
 
 <!-- ##############Report Start#################### -->
 
     <section id="report">
-      <h1>report</h1>
-    <input type="date" class="searchReport1">
-    <button class="searchBtnReport" onclick="searchReport()">Search</button>
-
-      <title>Datenow</title>
-      <table class="table ml-4 mt-2" style="width: 800px;">
-        <thead class="bg-success rounded text-white">
-          <tr>
-            <th scope="col">Item Name</th>
-            <th scope="col">Quantity</th>
-            <th scope="col">borrowed</th>
-            <th scope="col">Actions</th>
-          </tr>
-        </thead>
-        <tbody class="tbody-dailyReports">
-          <tr>
-            <th ></th>
-            <td>Loading Records..</td>
-            <td></td>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
-
-      
-
-
+      <h1>reports</h1>
     </section>
 <!-- ##############Report End#################### -->
 
@@ -487,6 +565,8 @@
   <script src="../Controller/transaction.js"></script>
   <script src="../Controller/Report.js"></script>
   <script src="../Controller/notifications.js"></script>
+  <script src="../Controller/stockHistory.js"></script>
+  <script src="../Controller/transHistory.js"></script>
 
   <script src="../bootstrap-4.5.3-dist/js/bootstrap.min.js"></script>
 </html>

@@ -19,17 +19,17 @@ body {
   padding-left: 40px;
   list-style: none;
   margin: 0;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   color: white;
   cursor: pointer;
 }
 .drawer-nav ul li:hover{
 background: rgba(0, 0, 0, 0.034);
 }
-#home, #transaction, #apparatus , #chemical, #report{
+#home, #transaction, #apparatus , #chemical, #report, #ActivityLog, #TransHistory{
   display: none;
 }
-#home, #transaction, #apparatus , #chemical, #report{ 
+#home, #transaction, #apparatus , #chemical, #report, #ActivityLog, #TransHistory{ 
   width: 945px;
   height: 100vh;
   overflow-y: scroll;

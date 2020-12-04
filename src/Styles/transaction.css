@@ -25,8 +25,9 @@
 }
 
 .add-trans-modal{
-    height: 90vh;
-    width: 500px;
+    padding: 0px 200px;
+    height: 100vh;
+    width: 100vw;
     background: white;
     position: absolute;
     top: 50%;
@@ -56,4 +57,29 @@
 
 .return-barrowed-card table{
     background-color: #F8F0F0;
+}
+
+.chemicals-textfield-container{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 15px;
+
+}
+.list-chemss{
+    margin-right: 20px;
+    width: fit-content;
+}
+
+.chems-textfield{
+    width: 70px;
+    margin-left: 5px;
+
+}
+
+.backarrow{
+    position: absolute;
+    left: 40px;
+    top: 15px;
+    width: 30px;
+    cursor: pointer;
 }
