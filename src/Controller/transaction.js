@@ -227,7 +227,7 @@ function addTransaction(apparatus){
       console.log(response.data);
       setTimeout(() => {
         location.reload(); 
-      }, 700);
+      }, 500);
     })
     .catch(function (error) {
       console.log(error);
@@ -417,7 +417,7 @@ function returnTransaction(){
             console.log(response.data);
             setTimeout(() => {
               location.reload(); 
-            }, 700);
+            }, 500);
           })
           .catch(function (error) {
             console.log(error);

@@ -9,19 +9,19 @@
     {
       "itemCode": "item1",
       "itemName": "item1",
-      "Qty": 548,
+      "Qty": 544,
       "measurement": "set",
       "borrowed": 0,
-      "damage": 2,
+      "damage": 6,
       "id": 1
     },
     {
       "itemCode": "item2",
       "itemName": "item2",
-      "Qty": 400,
+      "Qty": 399,
       "measurement": "pcs",
       "borrowed": 0,
-      "damage": 0,
+      "damage": 1,
       "id": 2
     },
     {
@@ -32,15 +32,24 @@
       "borrowed": 0,
       "damage": 0,
       "id": 3
+    },
+    {
+      "itemCode": "AP-123",
+      "itemName": "Item 3",
+      "Qty": "70",
+      "measurement": "pcs",
+      "borrowed": 0,
+      "damage": 0,
+      "id": 4
     }
   ],
   "Chemicals": [
     {
       "itemCode": "chem1",
       "itemName": "chem1",
-      "Qty": 441,
+      "Qty": 440,
       "measurement": "ml",
-      "borrowed": 9,
+      "borrowed": 10,
       "damage": 0,
       "id": 1
     },
@@ -74,9 +83,9 @@
     {
       "itemCode": "fasdas",
       "itemName": "mama123",
-      "Qty": "60",
+      "Qty": 59,
       "measurement": "pcs",
-      "borrowed": 0,
+      "borrowed": 1,
       "damage": 0,
       "id": 5
     },
@@ -88,6 +97,15 @@
       "borrowed": 0,
       "damage": 0,
       "id": 6
+    },
+    {
+      "itemCode": "asd",
+      "itemName": "asd",
+      "Qty": "3",
+      "measurement": "asdasd",
+      "borrowed": 0,
+      "damage": 0,
+      "id": 7
     }
   ],
   "Transactions": [],
@@ -237,6 +255,92 @@
       ],
       "returned_date": "2020-11-29",
       "id": 6
+    },
+    {
+      "student_num": "asda",
+      "student_name": "sdasdasd",
+      "subject": "asdasd",
+      "section": "asdasd",
+      "prof_name": "asdasd",
+      "date_borrowed": "2020-12-04",
+      "return_date": "2020-12-24",
+      "chemicals": [],
+      "apparatus": [
+        {
+          "id": "1",
+          "borrowed": 2
+        }
+      ],
+      "returned_date": "2020-12-04",
+      "id": 7
+    },
+    {
+      "student_num": "asd",
+      "student_name": "asd",
+      "subject": "asd",
+      "section": "asd",
+      "prof_name": "asd",
+      "date_borrowed": "2020-12-04",
+      "return_date": "2020-12-23",
+      "chemicals": [],
+      "apparatus": [
+        {
+          "id": "2",
+          "borrowed": 2
+        }
+      ],
+      "returned_date": "2020-12-04",
+      "id": 8
+    },
+    {
+      "student_num": "asd",
+      "student_name": "asd",
+      "subject": "asd",
+      "section": "asd",
+      "prof_name": "asd",
+      "date_borrowed": "2020-12-04",
+      "return_date": "2020-12-30",
+      "chemicals": [
+        {
+          "id": "1",
+          "borrowed": 1
+        }
+      ],
+      "apparatus": [
+        {
+          "id": "1",
+          "borrowed": 2
+        }
+      ],
+      "returned_date": "2020-12-04",
+      "id": 9
+    },
+    {
+      "student_num": "asd",
+      "student_name": "asda",
+      "subject": "sdasd",
+      "section": "asd",
+      "prof_name": "asdasd",
+      "date_borrowed": "2020-12-04",
+      "return_date": "2020-12-24",
+      "chemicals": [
+        {
+          "id": "5",
+          "borrowed": 1
+        }
+      ],
+      "apparatus": [
+        {
+          "id": "1",
+          "borrowed": 2
+        },
+        {
+          "id": "2",
+          "borrowed": 1
+        }
+      ],
+      "returned_date": "2020-12-04",
+      "id": 10
     }
   ],
   "stockHistory": [
@@ -271,6 +375,14 @@
       "stockAdded": 3,
       "measurement": "kg",
       "id": 4
+    },
+    {
+      "date": "2020-12-04",
+      "itemCode": "AP-123",
+      "itemName": "Item 3",
+      "stockAdded": 20,
+      "measurement": "pcs",
+      "id": 5
     }
   ],
   "MonthlyReports": [
