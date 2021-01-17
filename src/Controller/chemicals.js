@@ -1,9 +1,30 @@
+let chemPage =1;
+let targetSearch =""
+const pageNumber = document.querySelector(".pageNumber")
+pageNumber.innerHTML = chemPage
+
+function chemPrev(){
+  if(chemPage != 1){
+    chemPage = chemPage-1;
+    pageNumber.innerHTML = chemPage
+    getAllChemicalitem(targetSearch)
+  }
+}
+function chemNext(){
+  chemPage = chemPage+1;
+  pageNumber.innerHTML = chemPage
+  getAllChemicalitem(targetSearch)
+}
+
 function getAllChemicalitem(search){
-    axios.get(`http://localhost:3000/Chemicals?itemName_like=${search}&_sort=id&_order=desc`)
+  console.log(search)
+    axios.get(`http://localhost:3000/Chemicals?itemName_like=${search}&_sort=id&_order=desc&_page=${chemPage}&_limit=7`)
     .then(function (response) {
+      
+      
       let tr="";
       let tbody = document.querySelector(".tbody-chemicals-item");
-
+      
       response.data.forEach(item=>{
           tr+=`<tr>
                 <td >${item.itemCode}</td>
@@ -14,9 +35,11 @@ function getAllChemicalitem(search){
                 <td>${item.borrowed}</td>
                 
                 <td>
-                  <button 
+                  <svg 
+                  class="btn_pen"
                   onclick="showEditChemicalModal(${item.Qty}, ${item.id}, '${item.itemName}')"
-                  class="btn btn-success">Edit </button>
+                  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="18px" height="18px"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+
                 </td>
             </tr>`;
       })
@@ -33,7 +56,10 @@ getAllChemicalitem("")
 
 const chemSearchInput = document.querySelector(".chem-input-search")
 chemSearchInput.addEventListener("keyup",({target})=>{
+  chemPage=1
+  pageNumber.innerHTML = chemPage;
   getAllChemicalitem(target.value)
+  targetSearch = target.value
 })
 
 ////////////////

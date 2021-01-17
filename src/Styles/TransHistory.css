@@ -14,9 +14,9 @@
 .itemShow-modal{
     background: white;
     position: relative;
-    height: 400px;
+    height: 500px;
     overflow-y: scroll;
-    width: 340px;
+    width: 400px;
     padding: 20px 20px;
 }
 
@@ -32,10 +32,14 @@
 .close-modal-itemShow{
     position: absolute;
     top: 0px;
-    right: 0px;
-    font-size: 20px;
-    background: rgb(231, 19, 19);
+    right: 40px;
+    font-size: 70px;
     padding: 5px 10px;
-    color: white;
+    color: rgba(255, 255, 255, 0.541);
     cursor: pointer;
+}
+
+.close-modal-itemShow:hover{
+    color: rgb(255, 255, 255);
+
 }

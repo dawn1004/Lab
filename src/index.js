@@ -17,7 +17,7 @@ const createWindow = () => {
     height: 720,
     show: false,
     webPreferences:{
-      devTools: false,
+      devTools: true,
       nodeIntegration: true,
     }
   });
@@ -67,9 +67,9 @@ app.on('activate', () => {
 // code. You can also put them in separate files and import them here.
 
 // hot reloader
-// try {
-//   require('electron-reloader')(module)
-// } catch (_) {}
+try {
+  require('electron-reloader')(module)
+} catch (_) {}
 
 //IPC EVENTS
 

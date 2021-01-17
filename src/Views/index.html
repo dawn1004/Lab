@@ -29,14 +29,30 @@
 
     <section id="home">
       <div class="heading-apparatus shadow">
-        <h3>Notifications</h3>
-
+        <h3>Home</h3>
       </div>
-      <div class="card ml-5" style="width: 600px; min-height: 550px;">
-        <div class="card-body">
-          <div class="noti-container">
 
+      <div class="card bulsu-card shadow border-0">
+
+        <div class="heading-bulsu">
+          <img class="card-img-top home-logos" src="../assets/bulsu-logo.jpg" >
+          <div class="title-home">
+            <h5>Colllege of science Laboratory and Inventory</h5>
+            <p>Bulacan State University </p>
           </div>
+          <img class="card-img-top home-logos" src="../assets/cs.png" >
+        </div>
+
+
+        <div class="card-body">
+          <h5 class="card-title">Vision</h5>
+          <p class="card-text">Bulacan State University is a progressive knowledge-generating institution globally recognized for excellent instruction, pioneering research, and responsive community engagements </p>
+        
+          <h5 class="card-title">Mission</h5>
+          <p class="card-text">
+          Bulacan State University exists to produce highly competent, ethical and service-oriented professionals that contribute to the sustainable socio-economic growth and development of the nation 
+          </p>
+        
         </div>
       </div>
     </section>
@@ -59,9 +75,6 @@
             <th scope="col">#</th>
             <th scope="col">Student No.</th>
             <th scope="col">Student Name</th>
-            <th scope="col">Subject</th>
-            <th scope="col">Section</th>
-            <th scope="col">Intsructor</th>
             <th scope="col">Date Borrowed</th>
             <th scope="col">Return Date</th>
             <th scope="col">Action</th>
@@ -78,6 +91,17 @@
           </tr>
         </tbody>
       </table>
+      
+      <div class="pageButtons"> 
+        <span onclick="transPrev()">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="18px" height="18px"><path d="M0 0h24v24H0z" fill="none"/><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+          Back
+        </span>
+        <p class="trans_pageNumber">0</p>
+        <span onclick="transNext()">
+          Next<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="18px" height="18px"><path d="M0 0h24v24H0z" fill="none"/><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+        </span>
+      </div>
 
 
       <div class="add-trans-modal-bg">
@@ -163,7 +187,13 @@
       <!-- return dialog -->
      <div class="return-barrowed-dialog">
       <div class="card return-barrowed-card">
-        <h4>TRANSACTION NO: # <span class="trans-num"></span></h4>
+        
+        <h4>
+          <svg onclick="hideReturnDialog()" class="back-return-barrowed-dialog" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="50px" height="50px"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M21 11H6.83l3.58-3.59L9 6l-6 6 6 6 1.41-1.41L6.83 13H21v-2z"/></svg>  
+          TRANSACTION NO: # <span class="trans-num"></span>
+        </h4>
+
+        <div class="return-barrowed-info"></div>
         <h4>Apparatus List</h4>
 
         <table class="table table-borderless">
@@ -243,6 +273,17 @@
           </tr>
         </tbody>
       </table>
+
+      <div class="pageButtons"> 
+        <span onclick="appaPrev()">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="18px" height="18px"><path d="M0 0h24v24H0z" fill="none"/><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+          Back
+        </span>
+        <p class="appa_pageNumber">0</p>
+        <span onclick="appaNext()">
+          Next<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="18px" height="18px"><path d="M0 0h24v24H0z" fill="none"/><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+        </span>
+      </div>
       
 
       <div class="modal-add-apparatus-bg">
@@ -378,6 +419,16 @@
           </tr>
         </tbody>
       </table>
+      <div class="pageButtons"> 
+        <span onclick="chemPrev()">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="18px" height="18px"><path d="M0 0h24v24H0z" fill="none"/><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+          Back
+        </span>
+        <p class="pageNumber">0</p>
+        <span onclick="chemNext()">
+          Next<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="18px" height="18px"><path d="M0 0h24v24H0z" fill="none"/><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+        </span>
+      </div>
 
 
       
@@ -517,9 +568,6 @@
         <th scope="col">#</th>
         <th scope="col">Student No.</th>
         <th scope="col">Student Name</th>
-        <th scope="col">Subject</th>
-        <th scope="col">Section</th>
-        <th scope="col">Instructor</th>
         <th scope="col">Date Borrowed</th>
         <th scope="col">Returned Date</th>
         <th scope="col">Action</th>
@@ -532,9 +580,23 @@
     </tbody>
   </table>
 
+  <div class="pageButtons"> 
+    <span onclick="transHisPrev()">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="18px" height="18px"><path d="M0 0h24v24H0z" fill="none"/><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+      Back
+    </span>
+    <p class="transHis_pageNumber">0</p>
+    <span onclick="transHisNext()">
+      Next<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="18px" height="18px"><path d="M0 0h24v24H0z" fill="none"/><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+    </span>
+  </div>
+
+
 
   <div class="modal-itemShow-bg">
-    
+    <div class="close-modal-itemShow"
+    onclick="transHistoryModalListing()"
+    >X</div>
     <div class="itemShow-modal">
       <!-- <h4></h4> -->
     </div>
@@ -564,7 +626,7 @@
   <script src="../Controller/chemicals.js"></script>
   <script src="../Controller/transaction.js"></script>
   <script src="../Controller/Report.js"></script>
-  <script src="../Controller/notifications.js"></script>
+  <!-- <script src="../Controller/notifications.js"></script> -->
   <script src="../Controller/stockHistory.js"></script>
   <script src="../Controller/transHistory.js"></script>
 

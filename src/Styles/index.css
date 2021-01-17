@@ -35,3 +35,27 @@ background: rgba(0, 0, 0, 0.034);
   overflow-y: scroll;
 }
 
+.pageButtons{
+  width: 170px;
+  display: flex;
+  justify-content: space-between;
+  float: right;
+  margin-right: 40px;
+
+}
+
+.pageButtons span{
+  color: rgb(63, 63, 63);
+  fill: rgb(63, 63, 63);
+  font-size: small;
+  cursor:pointer;
+}
+.pageButtons span:hover{
+  color: rgb(0, 0, 0);
+  fill: rgb(0, 0, 0);
+
+}
+
+
+
+

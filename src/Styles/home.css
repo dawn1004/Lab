@@ -1,13 +1,27 @@
-.noti-container{}
-
-.noti{
-    background: #f1f1f1;
-    border-radius: 5px;
-    padding: 6px 10px;
-    margin-bottom: 10px;
+.bulsu-card{
+    margin: 50px;
 }
 
-.date-noti{
-    font-size: 12px;
-    color: rgb(49, 49, 49);
+.home-logos{
+    width: 80px;
+}
+
+.heading-bulsu{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.title-home{
+    text-align: center;
+}
+
+.btn_pen{
+    cursor: pointer;
+    fill: rgb(15, 194, 15);
+    
+}
+
+.btn_pen:hover{
+    fill: green;
 }

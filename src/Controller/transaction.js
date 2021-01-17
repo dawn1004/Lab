@@ -1,5 +1,24 @@
+let transPage =1;
+let trans_targetSearch =""
+const trans_pageNumber = document.querySelector(".trans_pageNumber")
+trans_pageNumber.innerHTML = transPage
+
+function transPrev(){
+  if(transPage != 1){
+    transPage = transPage-1;
+    trans_pageNumber.innerHTML = transPage
+    getAllTransactions()
+  }
+}
+function transNext(){
+  transPage = transPage+1;
+  trans_pageNumber.innerHTML = transPage
+  getAllTransactions()
+}
+
+
 function getAllTransactions(){
-    axios.get('http://localhost:3000/Transactions')
+    axios.get(`http://localhost:3000/Transactions?_page=${transPage}&_limit=7`)
     .then(function (response) {
       let tr="";
       let tbody = document.querySelector(".tbody-transactions");
@@ -9,17 +28,14 @@ function getAllTransactions(){
                 <td >${item.id}</td>
                 <td>${item.student_num}</td>
                 <td>${item.student_name}</td>
-                <td>${item.subject}</td>
-                <td>${item.section}</td>
-                <td>${item.prof_name}</td>
                 <td>${item.date_borrowed}</td>
                 <td>${item.return_date}</td>
                 <td >
-                  <button 
-                  onclick="showReturnDialog(${item.id})"
-                  class="btn btn-success">Return </button>
-                </td>
-            </tr>`;
+                <svg 
+                class="view-icon"
+                onclick="showReturnDialog(${item.id})" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24" width="25px" height="25px"><g><rect fill="none" height="24" width="24"/><path d="M19,3H5C3.89,3,3,3.9,3,5v14c0,1.1,0.89,2,2,2h14c1.1,0,2-0.9,2-2V5C21,3.9,20.11,3,19,3z M19,19H5V7h14V19z M13.5,13 c0,0.83-0.67,1.5-1.5,1.5s-1.5-0.67-1.5-1.5c0-0.83,0.67-1.5,1.5-1.5S13.5,12.17,13.5,13z M12,9c-2.73,0-5.06,1.66-6,4 c0.94,2.34,3.27,4,6,4s5.06-1.66,6-4C17.06,10.66,14.73,9,12,9z M12,15.5c-1.38,0-2.5-1.12-2.5-2.5c0-1.38,1.12-2.5,2.5-2.5 c1.38,0,2.5,1.12,2.5,2.5C14.5,14.38,13.38,15.5,12,15.5z"/></g></svg>
+
+              </tr>`;
       })
 
       tbody.innerHTML = tr;
@@ -302,6 +318,24 @@ function listToReturn(id){
           let transaction = response.data;
           transNum.innerHTML = transaction.id;
           TargetTrans = transaction.id;
+
+          const returnInfo = document.querySelector(".return-barrowed-info")
+
+          let infos = `
+          <div class="returnee-info">
+            <p>Student #: <span> ${transaction.student_num} </span> </p>
+            <p>Name: <span> ${transaction.student_name} </span> </p>
+            <p>subject: <span> ${transaction.subject} </span> </p>
+            <p>section: <span> ${transaction.section} </span> </p>
+            <p>prof_name: <span> ${transaction.prof_name} </span> </p>
+            <p>date_borrowed: <span> ${transaction.date_borrowed} </span> </p>
+            <p>return_date: <span> ${transaction.return_date} </span> </p>
+          </div>
+          `
+
+
+
+          returnInfo.innerHTML = infos
         
           const apparatus = transaction.apparatus;
 
