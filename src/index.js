@@ -17,7 +17,7 @@ const createWindow = () => {
     height: 720,
     show: false,
     webPreferences:{
-      devTools: true,
+      devTools: false,
       nodeIntegration: true,
     }
   });
@@ -67,11 +67,19 @@ app.on('activate', () => {
 // code. You can also put them in separate files and import them here.
 
 // hot reloader
-try {
-  require('electron-reloader')(module)
-} catch (_) {}
+// try {
+//   require('electron-reloader')(module)
+// } catch (_) {}
 
 //IPC EVENTS
+
+ipcMain.on('app:close', (event) => {
+
+  console.log("triggered")
+  app.quit()
+
+})
+
 
 
 ipcMain.on('auth:login', (event, data) => {
@@ -83,6 +91,17 @@ ipcMain.on('auth:login', (event, data) => {
     if(data.username == user.username && data.password == user.password){
       mainWindow.show()
       authWindow.hide()
+     }else{
+      const Alert1 = require("electron-alert");
+      let alert = new Alert1();
+      let swalOptions2 = {
+        text: "Incorrect username or password",
+        type: "warning",
+        showCancelButton: false
+      };
+      alert.fireWithFrame(swalOptions2, null, true, false);
+
+      return
      }
 
   })
@@ -109,6 +128,59 @@ ipcMain.on('popup:alert', (event,data) => {
   alert.fireWithFrame(swalOptions, null, true, false);
 })
 
+
+//start of pdf thingiie
+
+const {jsPDF} = require('jspdf')
+require('jspdf-autotable')
+var pdfview = require('electron-pdf-viewer');
+
+ipcMain.on('print:table', (event,{data, date}) => {
+  console.log(data)
+  const doc = new jsPDF()
+
+  doc.autoTable({
+    head: [["Date: "+date]],
+    theme:"plain"
+  })
+  doc.autoTable({
+    head: [['Chemicals:']],
+    theme:"plain"
+  })
+  doc.autoTable({
+    head: [['Item Code', 'Item Name', 'Current Stock', 'On Borrowed', 'Total Stock']],
+    body: data.chemicals
+  })
+  doc.autoTable({
+    head: [['Apparatus:']],
+    theme:"plain"
+  })
+  doc.autoTable({
+    head: [['Item Code', 'Item Name', 'Current Stock', 'On Borrowed', 'Total Stock']],
+    body: data.apparatus
+  })
+   
+
+  doc.save('table.pdf')
+
+//set pdf path
+  var pdfurl = path.resolve(__dirname, '../table.pdf');  
+  console.log(pdfurl)
+  const displayPdfUrl = pdfview.getPdfHtmlURL(pdfurl);
+  const options = {
+    width: 800,
+    height: 600,
+    webPreferences: {
+        nodeIntegration: false,
+        contextIsolation: true
+      }
+  }
+  var win = pdfview.showpdf(pdfurl, options);
+  win.show();
+
+  console.log("triggered")
+
+})
 
 
 //connect DB

@@ -82,6 +82,9 @@ function addChemical(){
     if(itemCode == "" || itemname =="" || Qty =="" || measurement ==""){
         ipcRenderer.send("popup:alert", {message: "Please complete the form"});
         return;
+    }else if(itemname.length > 26){
+        ipcRenderer.send("popup:alert", {message: "Item name must not exceed 26 characters"});
+        return;
     }
 
     axios.post('http://localhost:3000/Chemicals',{

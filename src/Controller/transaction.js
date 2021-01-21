@@ -18,14 +18,14 @@ function transNext(){
 
 
 function getAllTransactions(){
-    axios.get(`http://localhost:3000/Transactions?_page=${transPage}&_limit=7`)
+    axios.get(`http://localhost:3000/Transactions?_page=${transPage}&_limit=7&_sort=id&_order=desc`)
     .then(function (response) {
       let tr="";
       let tbody = document.querySelector(".tbody-transactions");
 
-      response.data.forEach(item=>{
+      response.data.forEach((item,index)=>{
           tr+=`<tr>
-                <td >${item.id}</td>
+                <td >${index+1}</td>
                 <td>${item.student_num}</td>
                 <td>${item.student_name}</td>
                 <td>${item.date_borrowed}</td>
@@ -114,11 +114,19 @@ function saveTransaction(){
     const formReturnDate = document.querySelector("#formReturnDate").value
     const formSubject = document.querySelector("#formSubject").value
     const formSection = document.querySelector("#formSection").value
+    var reg = new RegExp('^[0-9]+$');
     if(
       formSubject=="" || formSection == "" || formstudentNo == "" || 
       formstudentName =="" || formProfName=="" || formReturnDate==""){
         ipcRenderer.send("popup:alert", {message: "Please complete the form"});
         return
+    }else if(formstudentName.length > 26){
+        ipcRenderer.send("popup:alert", {message: "Name must not exceed 26 characters"});
+        return
+    }else if(isNaN(formstudentNo)){
+      ipcRenderer.send("popup:alert", {message: "Student number must be valid number"});
+      // document.querySelector("#formstudentNo").classList.add("is-invalid")
+      return
     }
 
     checkTextFieldApparatus()
@@ -354,10 +362,11 @@ function listToReturn(id){
                           type="number" 
                           value="0" 
                           min="0" 
-                          max="${response.data.borrowed}"
+                          max="${item.borrowed}"
                           onchange="updateCurrentReturnItem(${response.data.id}, this.value)"
                           class="form-control" 
                           style="width: 90px;"
+                          onKeyDown="return false"
                         >
                         </td>
                       </tr>`;
@@ -402,7 +411,7 @@ function updateCurrentReturnItem(id, value){
 
 
 function returnTransaction(){
-
+  
   axios.get(`http://localhost:3000/Transactions/${TargetTrans}`)
   .then(function (response) {
     let history =response.data;

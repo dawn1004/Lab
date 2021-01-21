@@ -2,6 +2,8 @@ const electron = require('electron')
 const  axios = require('axios')
 //Navigations
 
+
+
 const links = document.querySelectorAll(".nav-links li")
 
 links.forEach((link, index) => {
@@ -13,6 +15,8 @@ links.forEach((link, index) => {
     const report = document.querySelector("#report");
     const ActivityLog = document.querySelector("#ActivityLog");
     const TransHistory = document.querySelector("#TransHistory");
+    const theCritical = document.querySelector("#theCritical");
+    const DueDate = document.querySelector("#DueDate");
     home.style.display = "none"
     transaction.style.display = "none"
     apparatus.style.display = "none"
@@ -20,6 +24,8 @@ links.forEach((link, index) => {
     report.style.display = "none"
     ActivityLog.style.display = "none"
     TransHistory.style.display = "none"
+    theCritical.style.display = "none"
+    DueDate.style.display = "none"
 
     where(index);
 
@@ -53,8 +59,20 @@ const where =(index)=>{
   else if(index == 5) {
     TransHistory.style.display = "block"
   }
-  else if(index == 6) {
+  else if(index == 6){
+    theCritical.style.display = "block"
+    getCritical();
+  }
+  else if(index == 7 ){
+    //DueDate
+    DueDate.style.display = "block"
+  }
+  else if(index == 8) {
     report.style.display = "block"
+  }
+  else if(index == 9){
+    home.style.display = "block"
+    ipcRenderer.send("app:close");
   }
 }
 where(localStorage.getItem('where'))

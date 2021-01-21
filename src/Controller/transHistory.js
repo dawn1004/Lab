@@ -10,9 +10,9 @@ function getTransHistory(){
         let tr="";
         let tbody = document.querySelector(".tbody-transHistory-item");
 
-        response.data.forEach(item=>{
+        response.data.forEach((item, index)=>{
             tr+=`<tr>
-                <td >${item.id}</td>
+                <td >${index+1}</td>
                 <td>${item.student_num}</td>
                 <td>${item.student_name}</td>
                 <td>${item.date_borrowed}</td>
@@ -71,7 +71,7 @@ function ViewTransactionItemHistory(target){
             <p class="modaling-title"> Apparatus: </p>
             <ul class="history-appa-list"></ul>
         `
-        document.querySelector(".itemShow-modal").innerHTML = element;
+        document.querySelector(".itemShow-modal .items").innerHTML = element;
 
         const chemList = document.querySelector(".history-chems-list")
         data.chemicals.forEach(chems=>{

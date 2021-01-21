@@ -7,588 +7,255 @@
   ],
   "Apparatus": [
     {
-      "itemCode": "item1",
-      "itemName": "item1",
-      "Qty": 545,
-      "measurement": "set",
-      "borrowed": 5,
-      "damage": 6,
+      "itemCode": "AP-2022",
+      "itemName": "Telescope",
+      "Qty": 43,
+      "measurement": "pcs",
+      "borrowed": 7,
+      "damage": 0,
       "id": 1
     },
     {
-      "itemCode": "item2",
-      "itemName": "item2",
-      "Qty": 297,
+      "itemCode": "AP-2001",
+      "itemName": "Tong",
+      "Qty": 20,
       "measurement": "pcs",
-      "borrowed": 3,
-      "damage": 1,
+      "borrowed": 2,
+      "damage": 0,
       "id": 2
     },
     {
-      "itemCode": "AP-TVXQ",
-      "itemName": "MAMA MUE",
-      "Qty": 399,
+      "itemCode": "AP-5543",
+      "itemName": "Balance",
+      "Qty": 9,
       "measurement": "pcs",
-      "borrowed": 1,
+      "borrowed": 2,
       "damage": 0,
       "id": 3
     },
     {
-      "itemCode": "AP-123",
-      "itemName": "Item 3",
-      "Qty": 64,
+      "itemCode": "AP-4322",
+      "itemName": "Beaker",
+      "Qty": 17,
       "measurement": "pcs",
       "borrowed": 5,
-      "damage": 1,
+      "damage": 0,
       "id": 4
+    },
+    {
+      "itemCode": "AP-1211",
+      "itemName": "Stirring Rod",
+      "Qty": "14",
+      "measurement": "pcs",
+      "borrowed": 11,
+      "damage": 0,
+      "id": 5
     }
   ],
   "Chemicals": [
     {
-      "itemCode": "chem1",
-      "itemName": "chem1",
-      "Qty": 438,
-      "measurement": "ml",
-      "borrowed": 12,
+      "itemCode": "CH-2012",
+      "itemName": "Carbon",
+      "Qty": "200",
+      "measurement": "gm",
+      "borrowed": 0,
       "damage": 0,
       "id": 1
     },
     {
-      "itemCode": "chem2",
-      "itemName": "chem2",
-      "Qty": 498,
-      "measurement": "mg",
-      "borrowed": 6,
+      "itemCode": "CH-2015",
+      "itemName": "Liquid nitrogen",
+      "Qty": 5,
+      "measurement": "kg",
+      "borrowed": 7,
       "damage": 0,
       "id": 2
     },
     {
-      "itemCode": "chem3",
-      "itemName": "chem3",
-      "Qty": "700",
-      "measurement": "kg",
-      "borrowed": 3,
+      "itemCode": "CH-1543",
+      "itemName": "Antimony",
+      "Qty": "300",
+      "measurement": "gm",
+      "borrowed": 0,
       "damage": 0,
       "id": 3
     },
     {
-      "itemCode": "assa",
-      "itemName": "sasadsasa",
-      "Qty": "333",
-      "measurement": "sss",
-      "borrowed": 0,
+      "itemCode": "CH-2111",
+      "itemName": "Cobat",
+      "Qty": 499,
+      "measurement": "gm",
+      "borrowed": 1,
       "damage": 0,
       "id": 4
     },
     {
-      "itemCode": "fasdas",
-      "itemName": "mama123",
-      "Qty": "50",
-      "measurement": "pcs",
-      "borrowed": 1,
-      "damage": 0,
-      "id": 5
-    },
-    {
-      "itemCode": "CH-TVXQ",
-      "itemName": "Humanoids",
-      "Qty": "300",
-      "measurement": "pcs",
-      "borrowed": 0,
-      "damage": 0,
-      "id": 6
-    },
-    {
-      "itemCode": "asd",
-      "itemName": "asd",
-      "Qty": "3",
-      "measurement": "asdasd",
-      "borrowed": 0,
-      "damage": 0,
-      "id": 7
-    },
-    {
-      "itemCode": "asdasd",
-      "itemName": "asdasdasdas",
-      "Qty": "45454",
-      "measurement": "cas",
-      "borrowed": 0,
-      "damage": 0,
-      "id": 8
-    },
-    {
-      "itemCode": "chem122",
-      "itemName": "chem1",
-      "Qty": 438,
+      "itemCode": "CH-4355",
+      "itemName": "Dysprpsium",
+      "Qty": 69,
       "measurement": "ml",
-      "borrowed": 12,
-      "damage": 0,
-      "id": 1
-    },
-    {
-      "itemCode": "chem222",
-      "itemName": "chem2",
-      "Qty": 498,
-      "measurement": "mg",
-      "borrowed": 6,
-      "damage": 0,
-      "id": 2
-    },
-    {
-      "itemCode": "chem322",
-      "itemName": "chem3",
-      "Qty": "700",
-      "measurement": "kg",
-      "borrowed": 3,
-      "damage": 0,
-      "id": 3
-    },
-    {
-      "itemCode": "assa22",
-      "itemName": "sasadsasa",
-      "Qty": "333",
-      "measurement": "sss",
-      "borrowed": 0,
-      "damage": 0,
-      "id": 4
-    },
-    {
-      "itemCode": "fasdas22",
-      "itemName": "mama123",
-      "Qty": 59,
-      "measurement": "pcs",
-      "borrowed": 1,
+      "borrowed": 8,
       "damage": 0,
       "id": 5
-    },
-    {
-      "itemCode": "CH-TVXQ22",
-      "itemName": "Humanoids",
-      "Qty": "300",
-      "measurement": "pcs",
-      "borrowed": 0,
-      "damage": 0,
-      "id": 6
-    },
-    {
-      "itemCode": "asd22",
-      "itemName": "asd22",
-      "Qty": "3",
-      "measurement": "asdasd",
-      "borrowed": 0,
-      "damage": 0,
-      "id": 7
-    },
-    {
-      "itemCode": "asdasd22",
-      "itemName": "asdasdasdas",
-      "Qty": "45454",
-      "measurement": "cas",
-      "borrowed": 0,
-      "damage": 0,
-      "id": 8
     }
   ],
   "Transactions": [
     {
-      "student_num": "asda",
-      "student_name": "sdas",
-      "subject": "dasd",
-      "section": "asdasd",
-      "prof_name": "asddas",
-      "date_borrowed": "2020-12-13",
-      "return_date": "2020-12-29",
+      "student_num": "2017101211",
+      "student_name": "Dawn Bugay",
+      "subject": "Chemistry",
+      "section": "BSIT-4CG1",
+      "prof_name": "steve lee",
+      "date_borrowed": "2021-01-19",
+      "return_date": "2021-01-27",
       "chemicals": [],
+      "apparatus": [
+        {
+          "id": "4",
+          "borrowed": 2
+        },
+        {
+          "id": "5",
+          "borrowed": 11
+        }
+      ],
+      "id": 1
+    },
+    {
+      "student_num": "201610222",
+      "student_name": "Ronnie Abala",
+      "subject": "Physics",
+      "section": "BSIT-4CG1",
+      "prof_name": "Robert baho",
+      "date_borrowed": "2021-01-19",
+      "return_date": "2021-01-19",
+      "chemicals": [
+        {
+          "id": "5",
+          "borrowed": 5
+        }
+      ],
       "apparatus": [
         {
           "id": "1",
           "borrowed": 3
         }
       ],
-      "id": 1
+      "id": 2
     },
     {
-      "student_num": "a",
-      "student_name": "a",
-      "subject": "a",
-      "section": "a",
-      "prof_name": "a",
-      "date_borrowed": "2020-12-14",
-      "return_date": "2020-12-16",
-      "chemicals": [],
+      "student_num": "20172121",
+      "student_name": "Johm Amier Baylon",
+      "subject": "Chemistry",
+      "section": "BSIT-4EG1",
+      "prof_name": "Sir amier",
+      "date_borrowed": "2021-01-19",
+      "return_date": "2021-01-28",
+      "chemicals": [
+        {
+          "id": "4",
+          "borrowed": 1
+        }
+      ],
       "apparatus": [
         {
           "id": "1",
           "borrowed": 2
-        }
-      ],
-      "id": 2
-    },
-    {
-      "student_num": "b",
-      "student_name": "b",
-      "subject": "b",
-      "section": "b",
-      "prof_name": "b",
-      "date_borrowed": "2020-12-14",
-      "return_date": "2020-12-30",
-      "chemicals": [],
-      "apparatus": [
+        },
         {
-          "id": "2",
-          "borrowed": 2
+          "id": "4",
+          "borrowed": 3
         }
       ],
       "id": 3
     },
     {
-      "student_num": "c",
-      "student_name": "c",
-      "subject": "c",
-      "section": "c",
-      "prof_name": "c",
-      "date_borrowed": "2020-12-14",
-      "return_date": "2020-12-31",
+      "student_num": "20181112",
+      "student_name": "Momo jjang",
+      "subject": "Chemistry",
+      "section": "BSIT-4FG1",
+      "prof_name": "Kim kim",
+      "date_borrowed": "2021-01-19",
+      "return_date": "2021-01-22",
       "chemicals": [],
       "apparatus": [
         {
-          "id": "4",
+          "id": "3",
           "borrowed": 2
         }
       ],
       "id": 4
     },
     {
-      "student_num": "d",
-      "student_name": "d",
-      "subject": "d",
-      "section": "d",
-      "prof_name": "d",
-      "date_borrowed": "2020-12-14",
-      "return_date": "2020-12-31",
-      "chemicals": [],
-      "apparatus": [
-        {
-          "id": "3",
-          "borrowed": 1
-        }
-      ],
-      "id": 5
-    },
-    {
-      "student_num": "e",
-      "student_name": "e",
-      "subject": "e",
-      "section": "e",
-      "prof_name": "e",
-      "date_borrowed": "2020-12-14",
-      "return_date": "2020-12-25",
-      "chemicals": [],
-      "apparatus": [
+      "student_num": "20182022",
+      "student_name": "Mina jjang",
+      "subject": "Chemistry",
+      "section": "BSIT-4GG1",
+      "prof_name": "Maam mina",
+      "date_borrowed": "2021-01-19",
+      "return_date": "2021-01-19",
+      "chemicals": [
         {
           "id": "2",
           "borrowed": 1
         }
       ],
+      "apparatus": [
+        {
+          "id": "1",
+          "borrowed": 2
+        }
+      ],
+      "id": 5
+    },
+    {
+      "student_num": "20191112",
+      "student_name": "Juan cruz",
+      "subject": "Chemistry",
+      "section": "BSIT-4GG1",
+      "prof_name": "sir sir sir",
+      "date_borrowed": "2021-01-19",
+      "return_date": "2021-01-26",
+      "chemicals": [],
+      "apparatus": [
+        {
+          "id": "2",
+          "borrowed": 2
+        }
+      ],
       "id": 6
-    },
-    {
-      "student_num": "f",
-      "student_name": "f",
-      "subject": "f",
-      "section": "f",
-      "prof_name": "f",
-      "date_borrowed": "2020-12-14",
-      "return_date": "2020-12-31",
-      "chemicals": [],
-      "apparatus": [
-        {
-          "id": "4",
-          "borrowed": 1
-        }
-      ],
-      "id": 7
-    },
-    {
-      "student_num": "g",
-      "student_name": "g",
-      "subject": "g",
-      "section": "g",
-      "prof_name": "g",
-      "date_borrowed": "2020-12-14",
-      "return_date": "2021-01-01",
-      "chemicals": [],
-      "apparatus": [
-        {
-          "id": "4",
-          "borrowed": 1
-        }
-      ],
-      "id": 8
-    },
-    {
-      "student_num": "h",
-      "student_name": "h",
-      "subject": "h",
-      "section": "h",
-      "prof_name": "h",
-      "date_borrowed": "2020-12-14",
-      "return_date": "2020-12-24",
-      "chemicals": [],
-      "apparatus": [
-        {
-          "id": "4",
-          "borrowed": 1
-        }
-      ],
-      "id": 9
     }
   ],
   "History": [
     {
-      "student_num": "2017-101211",
-      "student_name": "dawb bugay",
-      "subject": "chemistry",
-      "section": "BSIT 3CG1",
-      "prof_name": "Smething teacher",
-      "date_borrowed": "2020-11-28",
-      "return_date": "2020-12-10",
+      "student_num": "20152221",
+      "student_name": "John Riocel Cenon",
+      "subject": "Chemistry",
+      "section": "BSIT4CG1",
+      "prof_name": "Maaam maaam",
+      "date_borrowed": "2021-01-19",
+      "return_date": "2021-01-21",
       "chemicals": [
         {
-          "id": "1",
-          "borrowed": 2
-        },
-        {
           "id": "2",
-          "borrowed": 2
-        },
-        {
-          "id": "3",
-          "borrowed": 1
+          "borrowed": 6
         }
       ],
-      "apparatus": [
-        {
-          "id": "1",
-          "borrowed": 2
-        },
-        {
-          "id": "2",
-          "borrowed": 1
-        }
-      ],
-      "returned_date": "2020-11-28",
+      "apparatus": [],
       "id": 1
     },
     {
-      "student_num": "2017-111111",
-      "student_name": "kishingki bugay",
-      "subject": "biology",
-      "section": "BSIT$C-G1",
-      "prof_name": "maam something",
-      "date_borrowed": "2020-11-28",
-      "return_date": "2020-12-12",
-      "chemicals": [
-        {
-          "id": "1",
-          "borrowed": 2
-        },
-        {
-          "id": "2",
-          "borrowed": 2
-        },
-        {
-          "id": "3",
-          "borrowed": 2
-        }
-      ],
-      "apparatus": [
-        {
-          "id": "1",
-          "borrowed": 2
-        },
-        {
-          "id": "2",
-          "borrowed": 2
-        }
-      ],
-      "returned_date": "2020-11-28",
-      "id": 2
-    },
-    {
-      "student_num": "asdasd",
-      "student_name": "asdasd",
-      "subject": "asdasd",
-      "section": "asdasd",
-      "prof_name": "asdas",
-      "date_borrowed": "2020-11-28",
-      "return_date": "2020-12-05",
-      "chemicals": [
-        {
-          "id": "1",
-          "borrowed": 5
-        }
-      ],
-      "apparatus": [],
-      "id": 3
-    },
-    {
-      "student_num": "asdasd",
-      "student_name": "asdasd",
-      "subject": "asdasd",
-      "section": "asdasd",
-      "prof_name": "asdasdads",
-      "date_borrowed": "2020-11-28",
-      "return_date": "2020-12-12",
-      "chemicals": [
-        {
-          "id": "2",
-          "borrowed": 1
-        }
-      ],
-      "apparatus": [
-        {
-          "id": "1",
-          "borrowed": 3
-        }
-      ],
-      "returned_date": "2020-11-28",
-      "id": 4
-    },
-    {
-      "student_num": "asaasdas",
-      "student_name": "dasdasd",
-      "subject": "asd",
-      "section": "asdasd",
-      "prof_name": "asdasd",
-      "date_borrowed": "2020-11-29",
-      "return_date": "2020-12-02",
-      "chemicals": [],
-      "apparatus": [
-        {
-          "id": "1",
-          "borrowed": 2
-        }
-      ],
-      "returned_date": "2020-11-29",
-      "id": 5
-    },
-    {
-      "student_num": "as",
-      "student_name": "dasdasda",
-      "subject": "sdasd",
-      "section": "sad",
-      "prof_name": "asdasdasd",
-      "date_borrowed": "2020-11-29",
-      "return_date": "2020-12-01",
-      "chemicals": [],
-      "apparatus": [
-        {
-          "id": "1",
-          "borrowed": 3
-        }
-      ],
-      "returned_date": "2020-11-29",
-      "id": 6
-    },
-    {
-      "student_num": "asda",
-      "student_name": "sdasdasd",
-      "subject": "asdasd",
-      "section": "asdasd",
-      "prof_name": "asdasd",
-      "date_borrowed": "2020-12-04",
-      "return_date": "2020-12-24",
-      "chemicals": [],
-      "apparatus": [
-        {
-          "id": "1",
-          "borrowed": 2
-        }
-      ],
-      "returned_date": "2020-12-04",
-      "id": 7
-    },
-    {
-      "student_num": "asd",
-      "student_name": "asd",
-      "subject": "asd",
-      "section": "asd",
-      "prof_name": "asd",
-      "date_borrowed": "2020-12-04",
-      "return_date": "2020-12-23",
-      "chemicals": [],
-      "apparatus": [
-        {
-          "id": "2",
-          "borrowed": 2
-        }
-      ],
-      "returned_date": "2020-12-04",
-      "id": 8
-    },
-    {
-      "student_num": "asd",
-      "student_name": "asd",
-      "subject": "asd",
-      "section": "asd",
-      "prof_name": "asd",
-      "date_borrowed": "2020-12-04",
-      "return_date": "2020-12-30",
-      "chemicals": [
-        {
-          "id": "1",
-          "borrowed": 1
-        }
-      ],
-      "apparatus": [
-        {
-          "id": "1",
-          "borrowed": 2
-        }
-      ],
-      "returned_date": "2020-12-04",
-      "id": 9
-    },
-    {
-      "student_num": "asd",
-      "student_name": "asda",
-      "subject": "sdasd",
-      "section": "asd",
-      "prof_name": "asdasd",
-      "date_borrowed": "2020-12-04",
-      "return_date": "2020-12-24",
+      "student_num": "20162211",
+      "student_name": "Junmark DeOcampo",
+      "subject": "Chemistry",
+      "section": "BSIT-4CG1",
+      "prof_name": "Sir jun",
+      "date_borrowed": "2021-01-19",
+      "return_date": "2021-01-27",
       "chemicals": [
         {
           "id": "5",
-          "borrowed": 1
-        }
-      ],
-      "apparatus": [
-        {
-          "id": "1",
-          "borrowed": 2
-        },
-        {
-          "id": "2",
-          "borrowed": 1
-        }
-      ],
-      "returned_date": "2020-12-04",
-      "id": 10
-    },
-    {
-      "student_num": "2017-101211",
-      "student_name": "dawn bugay",
-      "subject": "science",
-      "section": "BSIT-4cg1",
-      "prof_name": "maam ewan",
-      "date_borrowed": "2020-12-13",
-      "return_date": "2020-12-23",
-      "chemicals": [
-        {
-          "id": "2",
-          "borrowed": 1
+          "borrowed": 3
         }
       ],
       "apparatus": [
@@ -601,146 +268,289 @@
           "borrowed": 1
         }
       ],
-      "returned_date": "2020-12-13",
-      "id": 11
-    },
-    {
-      "student_num": "asdas",
-      "student_name": "dasdas",
-      "subject": "dasdasd",
-      "section": "asdasd",
-      "prof_name": "asdasdas",
-      "date_borrowed": "2020-12-13",
-      "return_date": "2020-12-30",
-      "chemicals": [
-        {
-          "id": "1",
-          "borrowed": 2
-        }
-      ],
-      "apparatus": [
-        {
-          "id": "1",
-          "borrowed": 2
-        },
-        {
-          "id": "2",
-          "borrowed": 1
-        },
-        {
-          "id": "4",
-          "borrowed": 1
-        }
-      ],
-      "returned_date": "2020-12-13",
-      "id": 12
-    },
-    {
-      "student_num": "asda",
-      "student_name": "sdasd",
-      "subject": "asda",
-      "section": "sdasd",
-      "prof_name": "asda",
-      "date_borrowed": "2020-12-13",
-      "return_date": "2021-01-05",
-      "chemicals": [],
-      "apparatus": [
-        {
-          "id": "1",
-          "borrowed": 3
-        }
-      ],
-      "returned_date": "2020-12-13",
-      "id": 13
-    },
-    {
-      "student_num": "i",
-      "student_name": "i",
-      "subject": "i",
-      "section": "i",
-      "prof_name": "i",
-      "date_borrowed": "2020-12-14",
-      "return_date": "2020-12-25",
-      "chemicals": [],
-      "apparatus": [],
-      "id": 14
+      "returned_date": "2021-01-19",
+      "id": 2
     }
   ],
   "stockHistory": [
     {
-      "date": "2020-11-28",
-      "itemCode": "item1",
-      "itemName": "item1",
-      "stockAdded": 50,
-      "measurement": "set",
+      "date": "2021-01-19",
+      "itemCode": "AP-1211",
+      "itemName": "Stirring Rod",
+      "stockAdded": 5,
+      "measurement": "pcs",
       "id": 1
     },
     {
-      "date": "2020-11-28",
-      "itemCode": "chem1",
-      "itemName": "chem1",
-      "stockAdded": 50,
-      "measurement": "ml",
-      "id": 2
-    },
-    {
-      "date": "2020-11-28",
-      "itemCode": "chem2",
-      "itemName": "chem2",
+      "date": "2021-01-19",
+      "itemCode": "AP-1211",
+      "itemName": "Stirring Rod",
       "stockAdded": 4,
-      "measurement": "mg",
-      "id": 3
-    },
-    {
-      "date": "2020-11-29",
-      "itemCode": "chem3",
-      "itemName": "chem3",
-      "stockAdded": 3,
-      "measurement": "kg",
-      "id": 4
-    },
-    {
-      "date": "2020-12-04",
-      "itemCode": "AP-123",
-      "itemName": "Item 3",
-      "stockAdded": 20,
       "measurement": "pcs",
-      "id": 5
-    },
-    {
-      "date": "2020-12-14",
-      "itemCode": "fasdas",
-      "itemName": "mama123",
-      "stockAdded": -9,
-      "measurement": "pcs",
-      "id": 6
+      "id": 2
     }
   ],
   "MonthlyReports": [
     {
-      "report": "somethimg",
-      "date": "2020-11-29",
-      "id": 1
-    },
-    {
-      "report": "somethimg",
-      "date": "2020-12-04",
-      "id": 2
-    },
-    {
-      "report": "somethimg",
-      "date": "2020-12-13",
-      "id": 3
-    },
-    {
-      "report": "somethimg",
-      "date": "2020-12-14",
-      "id": 4
-    },
-    {
-      "report": "somethimg",
-      "date": "2021-01-17",
+      "report": "wewewewew",
+      "date": "2020-11-30",
+      "apparatus": [
+        {
+          "itemCode": "item1",
+          "itemName": "item1",
+          "Qty": 111,
+          "measurement": "set",
+          "borrowed": 7,
+          "damage": 6,
+          "id": 1
+        },
+        {
+          "itemCode": "item2",
+          "itemName": "item2",
+          "Qty": 298,
+          "measurement": "pcs",
+          "borrowed": 2,
+          "damage": 1,
+          "id": 2
+        },
+        {
+          "itemCode": "AP-TVXQ",
+          "itemName": "MAMA MUE",
+          "Qty": 398,
+          "measurement": "pcs",
+          "borrowed": 2,
+          "damage": 0,
+          "id": 3
+        },
+        {
+          "itemCode": "AP-123",
+          "itemName": "Item 3",
+          "Qty": 64,
+          "measurement": "pcs",
+          "borrowed": 5,
+          "damage": 1,
+          "id": 4
+        },
+        {
+          "itemCode": "aaaaa",
+          "itemName": "wwww",
+          "Qty": "5",
+          "measurement": "grams",
+          "borrowed": 0,
+          "damage": 0,
+          "id": 5
+        },
+        {
+          "itemCode": "stock",
+          "itemName": "asdasdasd",
+          "Qty": "30",
+          "measurement": "ss",
+          "borrowed": 0,
+          "damage": 0,
+          "id": 6
+        }
+      ],
+      "chemicals": [
+        {
+          "itemCode": "chem1",
+          "itemName": "chem1",
+          "Qty": 438,
+          "measurement": "ml",
+          "borrowed": 12,
+          "damage": 0,
+          "id": 1
+        },
+        {
+          "itemCode": "chem2",
+          "itemName": "chem2",
+          "Qty": 498,
+          "measurement": "mg",
+          "borrowed": 6,
+          "damage": 0,
+          "id": 2
+        },
+        {
+          "itemCode": "chem3",
+          "itemName": "chem3",
+          "Qty": "700",
+          "measurement": "kg",
+          "borrowed": 3,
+          "damage": 0,
+          "id": 3
+        }
+      ],
       "id": 5
+    },
+    {
+      "report": "wewewewew",
+      "date": "2020-12-30",
+      "apparatus": [
+        {
+          "itemCode": "item1",
+          "itemName": "item1",
+          "Qty": 222,
+          "measurement": "set",
+          "borrowed": 7,
+          "damage": 6,
+          "id": 1
+        },
+        {
+          "itemCode": "item2",
+          "itemName": "item2",
+          "Qty": 298,
+          "measurement": "pcs",
+          "borrowed": 2,
+          "damage": 1,
+          "id": 2
+        },
+        {
+          "itemCode": "AP-TVXQ",
+          "itemName": "MAMA MUE",
+          "Qty": 398,
+          "measurement": "pcs",
+          "borrowed": 2,
+          "damage": 0,
+          "id": 3
+        },
+        {
+          "itemCode": "AP-123",
+          "itemName": "Item 3",
+          "Qty": 64,
+          "measurement": "pcs",
+          "borrowed": 5,
+          "damage": 1,
+          "id": 4
+        },
+        {
+          "itemCode": "aaaaa",
+          "itemName": "wwww",
+          "Qty": "5",
+          "measurement": "grams",
+          "borrowed": 0,
+          "damage": 0,
+          "id": 5
+        },
+        {
+          "itemCode": "stock",
+          "itemName": "asdasdasd",
+          "Qty": "30",
+          "measurement": "ss",
+          "borrowed": 0,
+          "damage": 0,
+          "id": 6
+        }
+      ],
+      "chemicals": [
+        {
+          "itemCode": "chem1",
+          "itemName": "chem1",
+          "Qty": 438,
+          "measurement": "ml",
+          "borrowed": 12,
+          "damage": 0,
+          "id": 1
+        }
+      ],
+      "id": 6
+    },
+    {
+      "report": "wewewewew",
+      "date": "2021-01-21",
+      "apparatus": [
+        {
+          "itemCode": "AP-2022",
+          "itemName": "Telescope",
+          "Qty": 43,
+          "measurement": "pcs",
+          "borrowed": 7,
+          "damage": 0,
+          "id": 1
+        },
+        {
+          "itemCode": "AP-2001",
+          "itemName": "Tong",
+          "Qty": 20,
+          "measurement": "pcs",
+          "borrowed": 2,
+          "damage": 0,
+          "id": 2
+        },
+        {
+          "itemCode": "AP-5543",
+          "itemName": "Balance",
+          "Qty": 9,
+          "measurement": "pcs",
+          "borrowed": 2,
+          "damage": 0,
+          "id": 3
+        },
+        {
+          "itemCode": "AP-4322",
+          "itemName": "Beaker",
+          "Qty": 17,
+          "measurement": "pcs",
+          "borrowed": 5,
+          "damage": 0,
+          "id": 4
+        },
+        {
+          "itemCode": "AP-1211",
+          "itemName": "Stirring Rod",
+          "Qty": "14",
+          "measurement": "pcs",
+          "borrowed": 11,
+          "damage": 0,
+          "id": 5
+        }
+      ],
+      "chemicals": [
+        {
+          "itemCode": "CH-2012",
+          "itemName": "Carbon",
+          "Qty": "200",
+          "measurement": "gm",
+          "borrowed": 0,
+          "damage": 0,
+          "id": 1
+        },
+        {
+          "itemCode": "CH-2015",
+          "itemName": "Liquid nitrogen",
+          "Qty": 5,
+          "measurement": "kg",
+          "borrowed": 7,
+          "damage": 0,
+          "id": 2
+        },
+        {
+          "itemCode": "CH-1543",
+          "itemName": "Antimony",
+          "Qty": "300",
+          "measurement": "gm",
+          "borrowed": 0,
+          "damage": 0,
+          "id": 3
+        },
+        {
+          "itemCode": "CH-2111",
+          "itemName": "Cobat",
+          "Qty": 499,
+          "measurement": "gm",
+          "borrowed": 1,
+          "damage": 0,
+          "id": 4
+        },
+        {
+          "itemCode": "CH-4355",
+          "itemName": "Dysprpsium",
+          "Qty": 69,
+          "measurement": "ml",
+          "borrowed": 8,
+          "damage": 0,
+          "id": 5
+        }
+      ],
+      "id": 7
     }
   ]
 }

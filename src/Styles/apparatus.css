@@ -1,7 +1,7 @@
 #apparatus{
 }
 .heading-apparatus{
-    background: #3F5A1F;
+    background: #222629;
     height: 75px;
     padding-left: 50px;
     display: flex;
@@ -9,6 +9,13 @@
     align-items: center;
     margin-bottom:30px;
 }
+.btn-greeen{
+    background: red;
+}
+.tb-bg{
+    background:#4caf50;
+}
+
 .heading-apparatus h3{
     color: white;
 }
